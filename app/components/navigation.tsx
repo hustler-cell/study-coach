@@ -1,31 +1,34 @@
-'use client';
-import React, { useState } from 'react';
-import Link from 'next/link';
-import HamburgerIcon from '../components/hamburgerIcon';
-import { HeroSectionContent } from '../home-page/heroSectionContent';
-import { usePathname } from 'next/navigation';
+"use client";
+import React, { useState } from "react";
+import Link from "next/link";
+import HamburgerIcon from "../components/hamburgerIcon";
+import { HeroSectionContent } from "../home-page/heroSectionContent";
+import { usePathname } from "next/navigation";
 
 interface NavItemProps {
   label: string;
   href: string;
-  isActive:boolean
+  isActive: boolean;
 }
 
 const NavItem: React.FC<NavItemProps> = ({ label, href, isActive }) => (
-    <Link href={href} className="relative hover:text-gray-300 p-2 transition-colors duration-200">
-      {label}
-      {isActive && (
-        <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-white rounded-full" />
-      )}
-    </Link>
-  );
+  <Link
+    href={href}
+    className="relative hover:text-gray-300 p-2 transition-colors duration-200"
+  >
+    {label}
+    {isActive && (
+      <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-4 h-1 bg-[#00A3FF] rounded-full" />
+    )}
+  </Link>
+);
 
 const navItems = [
-  { label: 'Home', href: '/' },
-  { label: 'Services', href: '/services' },
-  { label: 'Learnings', href: '/learnings' },
-  { label: 'Contact Us', href: '/contact' },
-  { label: 'About Us', href: '/about' },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Learnings", href: "/learnings" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "About Us", href: "/about" },
 ];
 
 const Navigation: React.FC = () => {
@@ -54,16 +57,16 @@ const Navigation: React.FC = () => {
         </div>
         <HamburgerIcon isOpen={isMenuOpen} onClick={toggleMenu} />
       </nav>
-      
+
       {/* Mobile Menu */}
       <div
         className={`lg:hidden fixed top-[80px] left-0 z-[99] right-0 bg-white transition-all shadow-lg duration-300 ease-in-out overflow-hidden ${
-          isMenuOpen ? 'max-h-screen' : 'max-h-0'
+          isMenuOpen ? "max-h-screen" : "max-h-0"
         }`}
       >
         <div className="flex flex-col items-center py-4">
           {navItems.map((item, index) => (
-            <NavItem key={index} {...item}  isActive={pathname === item.href}/>
+            <NavItem key={index} {...item} isActive={pathname === item.href} />
           ))}
         </div>
       </div>
@@ -72,4 +75,3 @@ const Navigation: React.FC = () => {
 };
 
 export default Navigation;
-
