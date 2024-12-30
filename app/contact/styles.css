@@ -1,0 +1,30 @@
+/* .custom_radio{ */
+input[type="radio"] {
+  appearance: none; /* Remove default radio button styles */
+  width: 16px;
+  height: 16px;
+  /* border: 2px solid #ccc; */
+  background-color: #bbdeff;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+input[type="radio"]:checked {
+  border-color: #007aff;
+  background-color: #007aff;
+  transform: scale(1.2); /* Increase size slightly when active */
+}
+/* } */
+
+.contact_container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 1518' fill='none'%3E%3Cpath opacity='0.4' d='M26.1109 27.4709C38.7333 2.91031 68.8761 -6.76752 93.4366 5.85489L1467.89 712.227C1492.45 724.849 1502.13 754.992 1489.5 779.552L1124.26 1490.24C1111.64 1514.79 1081.6 1524.52 1057.04 1511.9C937.679 1450.58 603.051 1278.66 370.223 1158.92C137.94 1039.46 -197.924 866.9 -317.587 805.424C-342.153 792.804 -351.747 762.702 -339.123 738.138L26.1109 27.4709Z' fill='%23BBDEFF'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
