@@ -41,7 +41,7 @@ export const Button: React.FC<ButtonProps> = ({ text, variant, icon, onClick }) 
 
       <button
         onClick={onClick}
-        className={`${baseStyles} ${variantStyles[variant]} max-md:px-5 animated-border`}
+        className={`${baseStyles} ${variantStyles[variant]} max-md:px-5 ${text!=="BOOK FREE DEMO"?' animated-border':''}  max-md:w-full  max-md:mt-[10px]`}
         style={{
             whiteSpace:"nowrap",
           background: variant === 'primary' ? '#0F509C' : 'white',

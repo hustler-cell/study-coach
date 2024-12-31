@@ -1,3 +1,5 @@
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+
 export interface NavItemProps {
     text: string;
     isActive?: boolean;
@@ -39,5 +41,23 @@ export interface NavItemProps {
     title: string;
     description: string;
     buttons: ButtonProps[];
-    heroImage: string;
+    heroImage: string | StaticImport;
+  }
+
+  export interface StatItemProps {
+    iconSrc: string;
+    count: string;
+    label: string;
+    bgColor: string;
+  }
+  
+  export interface EducatorBannerProps {
+    text: string;
+    imageSrc: string;
+  }
+
+  export interface CategoryCardProps {
+    icon: string | StaticImport;
+    title: string;
+    description: string;
   }
