@@ -1,5 +1,4 @@
 'use client';
-import React, { useState } from 'react';
 import { HeroSectionContent } from './home-page/heroSectionContent';
 import {Statistics} from './home-page/joinAsEdu'
 import { ValueCategories } from './home-page/valueCategory';

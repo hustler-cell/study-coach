@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import HamburgerIcon from "../components/hamburgerIcon";
-import { HeroSectionContent } from "../home-page/heroSectionContent";
 import { usePathname } from "next/navigation";
 
 interface NavItemProps {

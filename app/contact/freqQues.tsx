@@ -37,7 +37,7 @@ const freqAskedData = [
   },
 ];
 
-const freqQues = () => {
+const FreqQues = () => {
   const [activeQuestion, setActiveQuestion] = useState(freqAskedData[0]);
   return (
     <main className="mt-5 w-full pt-0 px-[100px] pb-0 max-md:mt-10 max-md:max-w-full relative mx-auto mb-12">
@@ -86,4 +86,4 @@ const freqQues = () => {
   );
 };
 
-export default freqQues;
+export default FreqQues;
