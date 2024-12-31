@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ButtonProps } from '../types';
 
 export const Button: React.FC<ButtonProps> = ({ text, variant, icon, onClick }) => {
-  const baseStyles = "px-8 py-4 rounded-[100px] min-h-[56px] font-semibold text-xl relative";
+  const baseStyles = "px-8 py-4 rounded-[100px] min-h-[56px] font-semibold lg:text-xl md:text-xl relative";
   const variantStyles = {
     primary: "bg-sky-800 text-zinc-100 w-[238px]",
     secondary: "bg-white text-gray-800 shadow-sm min-w-[240px] flex gap-2 items-center justify-center"
@@ -41,7 +41,7 @@ export const Button: React.FC<ButtonProps> = ({ text, variant, icon, onClick }) 
 
       <button
         onClick={onClick}
-        className={`${baseStyles} ${variantStyles[variant]} max-md:px-5 ${text!=="BOOK FREE DEMO"?' animated-border':''}  max-md:w-full  max-md:mt-[10px]`}
+        className={`${baseStyles} ${variantStyles[variant]} sm:text-[18px] max-md:px-5 ${text!=="BOOK FREE DEMO"?' animated-border':''}  max-md:w-full  max-md:mt-[10px]`}
         style={{
             whiteSpace:"nowrap",
           background: variant === 'primary' ? '#0F509C' : 'white',
