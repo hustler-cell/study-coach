@@ -5,6 +5,9 @@ import rightArrow from "../Images/landingPage/rightArrow.png";
 import ourValueBgImg from "../Images/landingPage/bgImage.png"
 import homeTution from "../Images/landingPage/homeTution.png"
 import onlineClasses from "../Images/landingPage/onlineClasses.png"
+import tickMark from "../Images/landingPage/tickMark.png"
+import grayTick from "../Images/landingPage/grayTick.png"
+import pricingBg from "../Images/landingPage/pricingBg.png"
 
 export const images={
     landingHeroImg,
@@ -13,5 +16,8 @@ export const images={
     rightArrow,
     ourValueBgImg,
     homeTution,
-    onlineClasses
+    onlineClasses,
+    tickMark,
+    grayTick,
+    pricingBg
 }

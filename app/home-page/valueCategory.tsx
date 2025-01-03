@@ -20,7 +20,7 @@ const categories: CategoryCardProps[] = [
 export const ValueCategories: React.FC = () => {
   return (
     <div className="relative mt-20 w-full px-4 sm:px-6 lg:px-8 lg:px-[100px] lg:py-[30px]">
-      <div className="flex flex-col lg:flex-row justify-between items-center lg:items-center gap-8 lg:gap-12 z-10 relative">
+      <div className="flex flex-col lg:flex-row justify-between  lg:items-center gap-8 lg:gap-12 z-10 relative">
         <div className="text-3xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight text-center lg:text-left lg:w-1/2 mb-8 lg:mb-0">
           Our top value categories for you
         </div>
@@ -46,8 +46,8 @@ export const ValueCategories: React.FC = () => {
         </div>
       </div>
       <div
-        className="absolute inset-0 bg-cover bg-no-repeat z-0"
-        style={{ backgroundImage: `url(${ourValueBgImg.src})`, top: '200px' }}
+        className="h-[140vh]  absolute inset-0 bg-cover bg-no-repeat z-0"
+        style={{ backgroundImage: `url(${ourValueBgImg.src})`, top: '-60px' }}
       ></div>
     </div>
   );

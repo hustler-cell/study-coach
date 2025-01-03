@@ -34,7 +34,7 @@ export const Statistics: React.FC = () => {
           loading="lazy"
           src={stat.iconSrc}
           alt={`${stat.label} icon`}
-          className="object-contain w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] lg:w-[120px] lg:h-[120px]"
+          className="object-contain w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] lg:w-[80px] lg:h-[80px]"
         />
       </div>
       <div className="flex flex-col self-stretch my-auto text-center max-md:text-sm whitespace-nowrap">

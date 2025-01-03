@@ -61,3 +61,16 @@ export interface NavItemProps {
     title: string;
     description: string;
   }
+  export interface PricingFeature {
+    icon: StaticImport;
+    text: string;
+  }
+  
+  export interface PricingPlan {
+    price: string;
+    period: string;
+    title: string;
+    features: PricingFeature[] ;
+    isPopular?: boolean;
+    buttonText: string;
+  }
