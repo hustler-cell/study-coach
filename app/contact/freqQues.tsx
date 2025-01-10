@@ -100,7 +100,7 @@ const FreqQues = () => {
             ))}
           </div>
         ) : (
-          <div className="desktop_view cards_container flex relative mt-8">
+          <div className="desktop_view cards_container flex relative mt-8 pl-16">
             <div className="card1 h-full border w-1/2 relative -mr-32 ml-10 shadow-md z-20 mt-8 rounded-sm">
               {freqAskedData.map((ques) => (
                 <div
