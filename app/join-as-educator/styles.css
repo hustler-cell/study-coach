@@ -1,0 +1,15 @@
+.educator_container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='844' height='878' viewBox='0 0 844 878' fill='none'%3E%3Crect opacity='0.4' x='706.441' y='-20.4385' width='271.919' height='1027.54' rx='50' transform='rotate(45 706.441 -20.4385)' fill='%23BBDEFF'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: contain;
+  background-position: right;
+  overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  .educator_container {
+    background-repeat: no-repeat;
+  }
+}

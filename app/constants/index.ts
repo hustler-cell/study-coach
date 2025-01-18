@@ -15,6 +15,13 @@ import contactUsImg from "../Images/contactUs/heroImg.png";
 //Join as Educator
 import plus from "../Images/joinAsEdu/plus.png";
 import minus from "../Images/joinAsEdu/minus.png";
+import bannerImage from "../Images/joinAsEdu/heroBg.png";
+import rectangleImage from "../Images/joinAsEdu/rectangle.png";
+import bestOpper from "../Images/joinAsEdu/bestOpper.png";
+import increment from "../Images/joinAsEdu/increment.png";
+import travel from "../Images/joinAsEdu/travel.png";
+import monthlySalary from "../Images/joinAsEdu/month.png";
+import safety from "../Images/joinAsEdu/safety.png";
 
 export const images = {
   landingHeroImg,
@@ -32,4 +39,11 @@ export const images = {
   //---------------
   plus,
   minus,
+  bannerImage,
+  rectangleImage,
+  bestOpper,
+  increment,
+  travel,
+  monthlySalary,
+  safety,
 };
