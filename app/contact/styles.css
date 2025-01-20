@@ -28,3 +28,32 @@ input[type="radio"]:checked {
   background-position: center;
   overflow: hidden;
 }
+
+/* //===================== */
+
+.mobile_view .mobile_section {
+  background: #f9f9f9;
+}
+
+.mobile_view .mobile_section .mt-3 {
+  font-size: 14px;
+}
+
+.desktop_view .cards_container {
+  display: flex;
+}
+
+@media (max-width: 1024px) {
+  /* .desktop_view {
+    display: none;
+  } */
+  /* .mobile_view {
+    display: block;
+  } */
+}
+
+@media (min-width: 1024px) {
+  /* .mobile_view {
+    display: none;
+  } */
+}
