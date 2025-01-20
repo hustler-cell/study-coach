@@ -62,7 +62,7 @@ const pricingPlans: PricingPlan[] = [
 
 export function PricingSection() {
   return (
-    <div className="flex flex-col items-center rounded-none z-[9] mt-[16%]">
+    <div className="flex flex-col items-center rounded-none z-[9] mt-[6%]">
       <div className="z-10 -mt-3.5 ml-7 text-4xl font-semibold text-center text-indigo-950">
         Popular Packages
       </div>

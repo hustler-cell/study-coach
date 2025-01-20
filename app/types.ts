@@ -74,3 +74,47 @@ export interface NavItemProps {
     isPopular?: boolean;
     buttonText: string;
   }
+  export interface BoardItemProps {
+    imageSrc: string;
+    imageAlt: string;
+    boardType: string;
+  }
+  
+  export interface BoardItemsData {
+    items: BoardItemProps[];
+  }
+  export interface CourseCardProps {
+    imageUrl: string;
+    imageAlt: string;
+    title: string;
+    description: string;
+  }
+  
+  export interface CoursesProps {
+    courses: CourseCardProps[];
+  }
+  export interface CourseCardPropsD {
+    imageUrl: string;
+    imageAlt: string;
+    title: string;
+    description: string;
+  }
+  
+  export interface CoursesPropsD {
+    courses: CourseCardPropsD[];
+  }
+
+  export interface SocialIconProps {
+    src: string;
+    alt: string;
+  }
+  
+  export interface FooterLinkProps {
+    text: string;
+  }
+  
+  export interface ContactButtonProps {
+    text: string;
+    iconSrc: string;
+    alt: string;
+  }
