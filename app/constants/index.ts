@@ -1,45 +1,41 @@
-
-import landingHeroImg from "../Images/landingPage/heroImg.png";
-import capGreen from "../Images/landingPage/capGreen.png";
-import capRed from "../Images/landingPage/capRed.png";
-import rightArrow from "../Images/landingPage/rightArrow.png";
-import ourValueBgImg from "../Images/landingPage/bgImage.png";
-import homeTution from "../Images/landingPage/homeTution.png";
-import onlineClasses from "../Images/landingPage/onlineClasses.png";
-import tickMark from "../Images/landingPage/tickMark.png";
-import grayTick from "../Images/landingPage/grayTick.png";
-import pricingBg from "../Images/landingPage/pricingBg.png";
+import landingHeroImg from "../../public/Images/landingPage/heroImg.png";
+import capGreen from "../../public/Images/landingPage/capGreen.png";
+import capRed from "../../public/Images/landingPage/capRed.png";
+import rightArrow from "../../public/Images/landingPage/rightArrow.png";
+import ourValueBgImg from "../../public/Images/landingPage/bgImage.png";
+import homeTution from "../../public/Images/landingPage/homeTution.png";
+import onlineClasses from "../../public/Images/landingPage/onlineClasses.png";
+import tickMark from "../../public/Images/landingPage/tickMark.png";
+import grayTick from "../../public/Images/landingPage/grayTick.png";
+import pricingBg from "../../public/Images/landingPage/pricingBg.png";
 
 // contact us
-import contactUsImg from "../Images/contactUs/heroImg.png";
+import contactUsImg from "../../public/Images/contactUs/heroImg.png";
 
 //Join as Educator
-import plus from "../Images/joinAsEdu/plus.png";
-import minus from "../Images/joinAsEdu/minus.png";
-import bannerImage from "../Images/joinAsEdu/heroBg.png";
-import rectangleImage from "../Images/joinAsEdu/rectangle.png";
-import bestOpper from "../Images/joinAsEdu/bestOpper.png";
-import increment from "../Images/joinAsEdu/increment.png";
-import travel from "../Images/joinAsEdu/travel.png";
-import monthlySalary from "../Images/joinAsEdu/month.png";
-import safety from "../Images/joinAsEdu/safety.png";
+import plus from "../../public/Images/joinAsEdu/plus.png";
+import minus from "../../public/Images/joinAsEdu/minus.png";
+import bannerImage from "../../public/Images/joinAsEdu/heroBg.png";
+import rectangleImage from "../../public/Images/joinAsEdu/rectangle.png";
+import bestOpper from "../../public/Images/joinAsEdu/bestOpper.png";
+import increment from "../../public/Images/joinAsEdu/increment.png";
+import travel from "../../public/Images/joinAsEdu/travel.png";
+import monthlySalary from "../../public/Images/joinAsEdu/month.png";
+import safety from "../../public/Images/joinAsEdu/safety.png";
 
-
-import rightArrowWhite from "../Images/landingPage/rightArrowWhite.png"
-import cbsc from "../Images/landingPage/cbsc.png"
-import chse from "../Images/landingPage/chse.png"
-import icse from "../Images/landingPage/icse.png"
-import stateboard from "../Images/landingPage/stateboard.png"
-import math from "../Images/landingPage/math.png"
-import english from "../Images/landingPage/english.png"
-import physics from "../Images/landingPage/physics.png"
-import chemistry from "../Images/landingPage/chemistry.png"
-import footerlogo from "../Images/landingPage/logo.png"
-import instagram from "../Images/landingPage/Instagram.png"
-import twitter from "../Images/landingPage/Twitter.png"
-import facebook from "../Images/landingPage/Facebook.png"
-
-
+import rightArrowWhite from "../../public/Images/landingPage/rightArrowWhite.png";
+import cbsc from "../../public/Images/landingPage/cbsc.png";
+import chse from "../../public/Images/landingPage/chse.png";
+import icse from "../../public/Images/landingPage/icse.png";
+import stateboard from "../../public/Images/landingPage/stateboard.png";
+import math from "../../public/Images/landingPage/math.png";
+import english from "../../public/Images/landingPage/english.png";
+import physics from "../../public/Images/landingPage/physics.png";
+import chemistry from "../../public/Images/landingPage/chemistry.png";
+import footerlogo from "../../public/Images/landingPage/logo.png";
+import instagram from "../../public/Images/landingPage/Instagram.png";
+import twitter from "../../public/Images/landingPage/Twitter.png";
+import facebook from "../../public/Images/landingPage/Facebook.png";
 
 export const images = {
   landingHeroImg,
@@ -75,5 +71,6 @@ export const images = {
   chemistry,
   footerlogo,
   instagram,
-  twitter,facebook
+  twitter,
+  facebook,
 };

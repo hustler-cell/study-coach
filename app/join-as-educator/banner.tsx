@@ -9,7 +9,7 @@ export const Banner: React.FC<JoinAsEducatorBannerProps> = ({
   description,
   buttons,
   bannerImage,
-  rectangleImage,
+  // rectangleImage,
 }) => {
   return (
     <div className="mt-10 w-full pt-0 pl-[85px] max-md:px-[20px] pb-0 max-md:mt-10 max-md:max-w-full relative">

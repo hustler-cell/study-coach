@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { Faq } from "./faq";
 import { FaqDataProps } from "../types";
-import { images } from "../constants";
 
 const faqData: FaqDataProps[] = [
   {

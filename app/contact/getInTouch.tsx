@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import GetInTouch from "../Images/getintouch.jpeg";
 import { images } from "../constants";
 
 const getInTouch = () => {
