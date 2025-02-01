@@ -6,12 +6,14 @@ const getInTouch = () => {
   const { contactUsImg } = images;
 
   return (
-    <main className="mt-20 w-full pt-0 px-[100px] pb-10 max-md:mt-[100px] max-md:px-5 relative mx-auto shadow-md bg-white">
+    <main className="mt-16 w-full pt-5 px-[100px] pb-10 max-md:mt-[100px] max-md:px-5 relative mx-auto shadow-md bg-white">
       <div>
         <h1 className="text-4xl font-bold tracking-wide leading-[50px] text-[#0F509C] max-md:text-3xl">
           Get in Touch
         </h1>
-        <div className="font-normal">We are here for you! How can we help?</div>
+        <div className="font-normal text-black">
+          We are here for you! How can we help?
+        </div>
       </div>
       <div className="flex md:flex-row flex-col gap-5 mt-8">
         {/* Left Side */}
