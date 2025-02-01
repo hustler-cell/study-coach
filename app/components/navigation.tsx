@@ -28,7 +28,7 @@ const navItems = [
   { label: "Learnings", href: "/learnings" },
   { label: "Contact Us", href: "/contact" },
   { label: "About Us", href: "/about" },
-  { label: "Educator", href: "/join-as-educator" },
+  // { label: "Educator", href: "/join-as-educator" },
 ];
 
 const Navigation: React.FC = () => {
