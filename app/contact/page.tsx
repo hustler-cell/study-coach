@@ -5,10 +5,12 @@ import "./styles.css";
 export default function Contact() {
   return (
     <>
-      <div className="contact_container">
-        <GetInTouch />
-        <FreqQues />
-      </div>
+      <main className="main_container">
+        <div className="contact_container">
+          <GetInTouch />
+          <FreqQues />
+        </div>
+      </main>
     </>
   );
 }

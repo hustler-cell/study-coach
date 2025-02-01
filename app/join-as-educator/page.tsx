@@ -5,8 +5,8 @@ import "./styles.css";
 
 export default function joinAsEducator() {
   return (
-    <main>
-      <div className="educator_container shadow-md">
+    <main className="bg-white">
+      <div className="educator_container ">
         <BannerContent />
         <EducatorDetails />
         <FaqContent />

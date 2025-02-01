@@ -12,7 +12,7 @@ export const Faq: React.FC<FaqProps> = ({ data, isActive, onToggle }) => {
         className="flex justify-between items-center cursor-pointer"
         onClick={onToggle}
       >
-        <p className="font-semibold">{data.question}</p>
+        <p className="font-semibold text-black">{data.question}</p>
         <span className="font-bold text-xl">
           <Image
             src={isActive ? minus : plus}

@@ -76,7 +76,7 @@ const EducatorDetails = () => {
       </div>
       {/* right card */}
       <div className="right_card bg-white md:w-1/2 w-full py-8 md:py-16 px-8 md:px-16 flex flex-col gap-8 md:gap-10">
-        <div className="font-semibold text-2xl md:text-3xl text-center md:text-left">
+        <div className="font-semibold text-2xl md:text-3xl text-center md:text-left text-black">
           JOIN AS EDUCATOR
         </div>
         <div className="input_container flex flex-col gap-6 md:gap-8">

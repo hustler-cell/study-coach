@@ -72,7 +72,7 @@ const FreqQues = () => {
       </h1>
       <div className="mt-8">
         {isMobileView ? (
-          <div className="mobile_view flex flex-col gap-4 px-[100px]">
+          <div className="mobile_view flex flex-col gap-4 px-[25px]">
             {freqAskedData.map((ques) => (
               <div
                 key={ques.id}
@@ -82,7 +82,7 @@ const FreqQues = () => {
                   className="flex justify-between items-center cursor-pointer"
                   onClick={() => toggleQuestion(ques.id)}
                 >
-                  <p className="font-semibold">{ques.question}</p>
+                  <p className="font-semibold text-black">{ques.question}</p>
                   <span className="font-bold text-xl">
                     {activeQuestion === ques.id ? (
                       <Image
