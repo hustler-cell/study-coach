@@ -35,6 +35,7 @@ export interface ButtonProps {
   variant: "primary" | "secondary";
   icon?: string;
   onClick?: () => void;
+  href?: string;
 }
 
 export interface HeroSectionProps {
@@ -100,47 +101,47 @@ export interface FaqProps {
   onToggle: () => void;
 }
 
-  export interface BoardItemProps {
-    imageSrc: string;
-    imageAlt: string;
-    boardType: string;
-  }
-  
-  export interface BoardItemsData {
-    items: BoardItemProps[];
-  }
-  export interface CourseCardProps {
-    imageUrl: string;
-    imageAlt: string;
-    title: string;
-    description: string;
-  }
-  
-  export interface CoursesProps {
-    courses: CourseCardProps[];
-  }
-  export interface CourseCardPropsD {
-    imageUrl: string;
-    imageAlt: string;
-    title: string;
-    description: string;
-  }
-  
-  export interface CoursesPropsD {
-    courses: CourseCardPropsD[];
-  }
+export interface BoardItemProps {
+  imageSrc: string;
+  imageAlt: string;
+  boardType: string;
+}
 
-  export interface SocialIconProps {
-    src: StaticImport;
-    alt: string;
-  }
-  
-  export interface FooterLinkProps {
-    text: string;
-  }
-  
-  export interface ContactButtonProps {
-    text: string;
-    iconSrc: StaticImport;
-    alt: string;
-  }
+export interface BoardItemsData {
+  items: BoardItemProps[];
+}
+export interface CourseCardProps {
+  imageUrl: string;
+  imageAlt: string;
+  title: string;
+  description: string;
+}
+
+export interface CoursesProps {
+  courses: CourseCardProps[];
+}
+export interface CourseCardPropsD {
+  imageUrl: string;
+  imageAlt: string;
+  title: string;
+  description: string;
+}
+
+export interface CoursesPropsD {
+  courses: CourseCardPropsD[];
+}
+
+export interface SocialIconProps {
+  src: StaticImport;
+  alt: string;
+}
+
+export interface FooterLinkProps {
+  text: string;
+}
+
+export interface ContactButtonProps {
+  text: string;
+  iconSrc: StaticImport;
+  alt: string;
+}
