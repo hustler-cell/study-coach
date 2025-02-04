@@ -37,6 +37,10 @@ import instagram from "../../public/Images/landingPage/Instagram.png";
 import twitter from "../../public/Images/landingPage/Twitter.png";
 import facebook from "../../public/Images/landingPage/Facebook.png";
 
+//Book a Demo
+import BannerImg from "../../public/Images/bookDemo/heroBg.png";
+import ButtonImg from "../../public/Images/bookDemo/calenderIcon.png";
+
 export const images = {
   landingHeroImg,
   capGreen,
@@ -73,4 +77,7 @@ export const images = {
   instagram,
   twitter,
   facebook,
+  //---------------
+  BannerImg,
+  ButtonImg,
 };
