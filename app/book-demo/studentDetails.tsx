@@ -210,7 +210,7 @@ const StudentDetails = () => {
               type="submit"
               className={`py-3 px-6 rounded-md text-white flex justify-center items-center gap-4  ${
                 isFormValid
-                  ? "bg-[#0C67D1] hover:bg-white border-2 border-white hover:text-[#0C67D1]"
+                  ? "bg-[#0C67D1] hover:bg-white border-2 border-white hover:text-[#0C67D1] hover:font-semibold"
                   : "bg-gray-400 cursor-not-allowed"
               } transition duration-300`}
               // className="bg-[#0C67D1] hover:bg-white border-white hover:text-[#0C67D1] border"

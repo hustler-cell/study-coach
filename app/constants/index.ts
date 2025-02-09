@@ -41,6 +41,9 @@ import facebook from "../../public/Images/landingPage/Facebook.png";
 import BannerImg from "../../public/Images/bookDemo/heroBg.png";
 import ButtonImg from "../../public/Images/bookDemo/calenderIcon.png";
 
+//404
+import NotFound from "../../public/Images/404.png";
+
 export const images = {
   landingHeroImg,
   capGreen,
@@ -80,4 +83,6 @@ export const images = {
   //---------------
   BannerImg,
   ButtonImg,
+  //---------------
+  NotFound,
 };
