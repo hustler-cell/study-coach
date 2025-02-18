@@ -81,8 +81,8 @@ export const Courses: React.FC = () => {
     const handleMouseLeave = () => setIsAutoPlaying(true);
 
     return (
-        <div className="flex flex-col mt-[120px]">
-            <div className="z-10 self-center mt-0 text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-indigo-950 max-w-3xl">
+        <div className="flex flex-col mt-[120px] w-full p-0">
+            <div className="z-10 self-center mt-0 text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-indigo-950 max-w-3xl px-[10px]">
                 Choose the Courses that According to your Need
             </div>
             <div className="flex flex-col pt-8 pb-6 px-20 mt-8 w-full bg-[#0F509C]">

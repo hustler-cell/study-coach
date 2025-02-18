@@ -28,28 +28,29 @@ export const CourseBoard: React.FC = () => {
     };
 
     return (
-        <div className="flex flex-col items-center rounded-xl w-full z-[99] px-[70px] mt-[200px]">
-            <h1 className="text-4xl font-semibold text-center text-indigo-950 mb-8">
+<div className="flex flex-col items-center rounded-xl w-full z-[99] md:px-[70px] sm:px-[60px] md:mt-[200px] sm:mt-[60px]">
+<h1 className="text-4xl font-semibold text-center text-indigo-950 mb-8 mt-[60px]">
                 Course by Study Coach
             </h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full px-6">
-                {boardData.items.map((item, index) => (
-                    <div
-                        key={index}
-                        className="flex flex-col items-center bg-white rounded-xl shadow-lg p-6 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
-                    >
-                        <img
-                            loading="lazy"
-                            src={item.imageSrc || "/placeholder.svg"}
-                            alt={item.imageAlt}
-                            className="w-40 h-40 "
-                        />
-                        <div className="mt-4 bg-blue-500 text-white font-bold text-center py-2 px-6 rounded-lg w-full transition-colors duration-300 ease-in-out hover:bg-blue-600">
-                            {item.boardType}
-                        </div>
-                    </div>
-                ))}
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full px-4">
+    {boardData.items.map((item, index) => (
+        <div
+            key={index}
+            className="p-[50px] flex flex-col items-center bg-white rounded-lg shadow-md p-4 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg"
+        >
+            <img
+                loading="lazy"
+                src={item.imageSrc || "/placeholder.svg"}
+                alt={item.imageAlt}
+                className="w-24 h-24 object-cover rounded-md"
+            />
+            <div className="mt-2 bg-blue-500 text-white font-semibold text-center py-1 px-4 rounded-md w-full text-sm transition-colors duration-300 ease-in-out hover:bg-blue-600 leading-8">
+                {item.boardType}
             </div>
+        </div>
+    ))}
+</div>
+
         </div>
     );
 };

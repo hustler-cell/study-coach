@@ -9,18 +9,25 @@ const popularPages = ["About us", "Student Registration", "Courses", "CBSE", "IC
 export const Footer = () => {
   const {rightArrowWhite,instagram,twitter,facebook,footerlogo}=images;
     const ContactButton = ({ text, iconSrc, alt }: ContactButtonProps) => (
-        <button 
-          className="flex flex-auto gap-8 px-8 py-6 bg-[#0F509C] rounded-xl border border-solid border-zinc-300 text-xl font-bold leading-none text-white hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
-          tabIndex={0}
-        >
-          <span>{text}</span>
-          <Image
-            loading="lazy"
-            src={iconSrc}
-            alt={alt}
-            className="object-contain shrink-0 self-start aspect-[1.19] w-[25px]"
-          />
-        </button>
+      <button 
+  className="flex justify-between flex-auto gap-4 
+             px-4 py-6 sm:px-6 sm:py-4 md:px-8 md:py-6
+             bg-[#0F509C] rounded-xl border border-solid border-zinc-300 
+             text-base sm:text-lg md:text-xl font-bold leading-none text-white 
+             hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 
+             focus:ring-offset-2"
+  tabIndex={0}
+>
+  <span>{text}</span>
+  <Image
+    loading="lazy"
+    src={iconSrc}
+    alt={alt}
+    className="object-contain shrink-0 self-start aspect-[1.19] w-[20px] sm:w-[22px] md:w-[25px]"
+  />
+</button>
+
+    
       );
     const FooterLink = ({ text }: FooterLinkProps) => (
         <div className="mt-2.5 text-base leading-8 text-white hover:text-gray-300 cursor-pointer">
@@ -37,7 +44,7 @@ export const Footer = () => {
       );
   return (
     <div className="flex flex-col pt-20 rounded-none mt-[10%]">
-      <div className="flex flex-col  pb-20 w-full bg-sky-950 max-md:px-5 max-md:max-w-full">
+      <div className="flex flex-col  pb-20 w-full bg-sky-950 max-md:px-5 max-sm:px-1 max-md:max-w-full">
         <div className="z-10 self-center px-14 pt-16 pb-10 -mt-20 max-w-full bg-white rounded-xl border-2 border-solid border-zinc-300 w-[85%] max-md:px-5">
           <div className="flex gap-5 max-md:flex-col">
             <div className="flex flex-col w-[43%] max-md:ml-0 max-md:w-full">

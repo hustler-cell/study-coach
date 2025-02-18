@@ -144,3 +144,21 @@ export interface FaqProps {
     iconSrc: StaticImport;
     alt: string;
   }
+
+  export interface BenefitItem {
+    imageUrl: string;
+    title: string;
+    description: string;
+    hasBackground?: boolean;
+  }
+  
+  export interface BenefitsRowProps {
+    benefits: BenefitItem[];
+  }
+
+  export interface BenefitCardProps {
+    imageUrl: string;
+    title: string;
+    description: string;
+    hasBackground?: boolean;
+  }
