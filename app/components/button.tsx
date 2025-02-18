@@ -49,23 +49,23 @@ export const Button: React.FC<ButtonProps> = ({
         `}
         </style>
 
-        <Link href={href}>
-          <button
-            onClick={onClick}
-            className={`${baseStyles} ${
-              variantStyles[variant]
-            } sm:text-[18px] max-md:px-5 ${
-              text !== "BOOK FREE DEMO" ? " animated-border" : ""
-            }  max-md:w-full  max-md:mt-[10px]`}
-            style={{
-              whiteSpace: "nowrap",
-              background: variant === "primary" ? "#0F509C" : "white",
-              boxShadow:
-                variant === "secondary"
-                  ? "0 0 25px rgba(0, 0, 0, 0.2)"
-                  : "0 4px 6px rgba(0, 0, 0, 0.2)",
-            }}
-          >
+        <Link
+          href={href}
+          className={`${baseStyles} ${
+            variantStyles[variant]
+          } sm:text-[18px] max-md:px-5 text-center ${
+            text !== "BOOK FREE DEMO" ? " animated-border" : ""
+          }  max-md:w-full  max-md:mt-[10px]`}
+          style={{
+            whiteSpace: "nowrap",
+            background: variant === "primary" ? "#0F509C" : "white",
+            boxShadow:
+              variant === "secondary"
+                ? "0 0 25px rgba(0, 0, 0, 0.2)"
+                : "0 4px 6px rgba(0, 0, 0, 0.2)",
+          }}
+        >
+          <button onClick={onClick}>
             {icon && (
               <img
                 loading="lazy"
