@@ -4,7 +4,13 @@ import "./styles.css";
 import Image from "next/image";
 import { images } from "../constants";
 
-const freqAskedData = [
+interface faqData {
+  id: number;
+  question: string;
+  answer: string;
+}
+
+const freqAskedData: faqData[] = [
   {
     id: 1,
     question:
@@ -41,7 +47,9 @@ const freqAskedData = [
 
 const FreqQues = () => {
   const { plus, minus } = images;
-  const [activeQuestion, setActiveQuestion] = useState(freqAskedData[0].id);
+  const [activeQuestion, setActiveQuestion] = useState<number | null>(
+    freqAskedData[0].id
+  );
   const [isMobileView, setIsMobileView] = useState(false);
 
   useEffect(() => {
@@ -53,7 +61,7 @@ const FreqQues = () => {
     return () => window.removeEventListener("resize", checkScreenWidth);
   }, []);
 
-  const toggleQuestion = (id: any) => {
+  const toggleQuestion = (id: number) => {
     setActiveQuestion((prev) => (prev === id ? null : id));
   };
 
@@ -64,7 +72,7 @@ const FreqQues = () => {
       </h1>
       <div className="mt-8">
         {isMobileView ? (
-          <div className="mobile_view flex flex-col gap-4 px-[100px]">
+          <div className="mobile_view flex flex-col gap-4 px-[25px]">
             {freqAskedData.map((ques) => (
               <div
                 key={ques.id}
@@ -74,7 +82,7 @@ const FreqQues = () => {
                   className="flex justify-between items-center cursor-pointer"
                   onClick={() => toggleQuestion(ques.id)}
                 >
-                  <p className="font-semibold">{ques.question}</p>
+                  <p className="font-semibold text-black">{ques.question}</p>
                   <span className="font-bold text-xl">
                     {activeQuestion === ques.id ? (
                       <Image
@@ -135,13 +143,12 @@ const FreqQues = () => {
               {activeQuestion && (
                 <div className="inner_container pl-40 pr-5 mt-10 flex flex-col gap-8">
                   <div className="ques_div font-bold">
-                    {
-                      freqAskedData.find((q) => q.id === activeQuestion)
-                        .question
-                    }
+                    {freqAskedData.find((q) => q.id === activeQuestion)
+                      ?.question || "Question not found"}
                   </div>
                   <div className="ans_div">
-                    {freqAskedData.find((q) => q.id === activeQuestion).answer}
+                    {freqAskedData.find((q) => q.id === activeQuestion)
+                      ?.answer || "Question not found"}
                   </div>
                 </div>
               )}

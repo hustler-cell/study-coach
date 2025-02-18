@@ -1,10 +1,16 @@
 import * as React from "react";
-import { SocialIconProps,FooterLinkProps,ContactButtonProps } from "../types";
+import { SocialIconProps, FooterLinkProps, ContactButtonProps } from "../types";
 import { images } from "../constants";
 import Image from "next/image";
 
 const legalLinks = ["Terms and condition", "Privacy", "Cookies", "Contact"];
-const popularPages = ["About us", "Student Registration", "Courses", "CBSE", "ICSE"];
+const popularPages = [
+  "About us",
+  "Student Registration",
+  "Courses",
+  "CBSE",
+  "ICSE",
+];
 
 export const Footer = () => {
   const {rightArrowWhite,instagram,twitter,facebook,footerlogo}=images;
@@ -59,12 +65,12 @@ export const Footer = () => {
             </div>
             <div className="flex flex-col ml-5 w-[57%] max-md:ml-0 max-md:w-full">
               <div className="flex flex-wrap gap-6 max-md:mt-10">
-                <ContactButton 
+                <ContactButton
                   text="BOOK A DEMO"
                   iconSrc={rightArrowWhite}
                   alt="Book a demo icon"
                 />
-                <ContactButton 
+                <ContactButton
                   text="GET IN TOUCH"
                   iconSrc={rightArrowWhite}
                   alt="Get in touch icon"
@@ -77,10 +83,10 @@ export const Footer = () => {
           <div className="flex gap-5 max-md:flex-col">
             <div className="flex flex-col w-[28%] max-md:ml-0 max-md:w-full">
               <div className="flex flex-col grow max-md:mt-10 max-md:ml-[-20px]">
-                <Image 
+                <Image
                   loading="lazy"
-
-src={footerlogo}                  alt="Study Coach Logo"
+                  src={footerlogo}
+                  alt="Study Coach Logo"
                   className="object-contain aspect-[4.42] w-[248px] max-md:ml-[-20px]"
                 />
                 <div className="flex flex-col items-start pr-1.5 pl-11 w-full max-md:pl-5">
@@ -108,7 +114,9 @@ src={footerlogo}                  alt="Study Coach Logo"
             </div>
             <div className="flex flex-col ml-5 w-[18%] max-md:ml-0 max-md:w-full">
               <div className="flex flex-col grow items-start text-base leading-8 text-white max-md:mt-10">
-                <h3 className="text-lg font-medium leading-loose">Popular Pages</h3>
+                <h3 className="text-lg font-medium leading-loose">
+                  Popular Pages
+                </h3>
                 {popularPages.map((page, index) => (
                   <FooterLink key={index} text={page} />
                 ))}

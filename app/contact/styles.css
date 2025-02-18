@@ -18,6 +18,10 @@ input[type="radio"]:checked {
 }
 /* } */
 
+.main_container {
+  background-color: white;
+}
+
 .contact_container {
   position: relative;
   width: 100%;

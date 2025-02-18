@@ -7,7 +7,10 @@ interface PricingFeatureListProps {
   textColor: string;
 }
 
-export function PricingFeatureList({ features, textColor }: PricingFeatureListProps) {
+export function PricingFeatureList({
+  features,
+  textColor,
+}: PricingFeatureListProps) {
   return (
     <>
       {features.map((feature, index) => (
