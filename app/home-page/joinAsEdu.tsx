@@ -56,21 +56,24 @@ export const Statistics: React.FC = () => {
           <div className="flex flex-col ml-5 max-md:ml-0 max-md:w-full max-md:w-full">
             <div className="flex max-md:flex-col max-lg:flex-col gap-9 w-full max-md:gap-3 text-3xl max-md:items-center max-lg:items-center font-semibold leading-tight text-zinc-100 max-md:mt-3 max-md:max-w-full">
               <div className="flex shrink-0 w-1.5 bg-indigo-500 rounded-3xl h-[108px] max-md:rotate-90 max-lg:rotate-90 max-md:h-[30px] max-lg:h-[30px]" />
-              <Link
+              {/* <Link
                 href={"/join-as-educator"}
                 className="flex justify-center items-center"
+              > */}
+              <Link
+                href={"/join-as-educator"}
+                className="flex ml-[-20px] gap-10 items-start pl-10 my-auto bg-[#0F509C] rounded-[50px] shadow-[0px_126px_35px_rgba(0,0,0,0)] max-md:max-w-full"
               >
-                <div className="flex ml-[-20px] gap-10 items-start pl-10 my-auto bg-[#0F509C] rounded-[50px] shadow-[0px_126px_35px_rgba(0,0,0,0)] max-md:max-w-full">
-                  <button className="flex-auto my-auto max-lg:text-[18px]">
-                    JOIN AS EDUCATOR
-                  </button>
-                  <Image
-                    src={rightArrow}
-                    alt="Educator illustration"
-                    className="object-contain z-10 shrink-0 self-end -mt-2 -mr-7 aspect-square w-[85px] "
-                  />
-                </div>
+                <button className="flex-auto my-auto max-lg:text-[18px]">
+                  JOIN AS EDUCATOR
+                </button>
+                <Image
+                  src={rightArrow}
+                  alt="Educator illustration"
+                  className="object-contain z-10 shrink-0 self-end -mt-2 -mr-7 aspect-square w-[85px] "
+                />
               </Link>
+              {/* </Link> */}
             </div>
           </div>
         </div>
