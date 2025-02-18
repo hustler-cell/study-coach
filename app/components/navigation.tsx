@@ -8,12 +8,19 @@ interface NavItemProps {
   label: string;
   href: string;
   isActive: boolean;
+  onClick?: () => void;
 }
 
-const NavItem: React.FC<NavItemProps> = ({ label, href, isActive }) => (
+const NavItem: React.FC<NavItemProps> = ({
+  label,
+  href,
+  isActive,
+  onClick,
+}) => (
   <Link
     href={href}
     className="relative hover:text-gray-300 p-2 transition-colors duration-200"
+    onClick={onClick}
   >
     {label}
     {isActive && (
@@ -62,13 +69,17 @@ const Navigation: React.FC = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden fixed top-[80px] left-0 z-[99] right-0 bg-white transition-all shadow-lg duration-300 ease-in-out overflow-hidden ${
-          isMenuOpen ? "max-h-screen" : "max-h-0"
-        }`}
+        className="lg:hidden fixed top-[80px] left-0 z-[99] right-0 bg-white transition-all shadow-lg duration-300 ease-in-out overflow-hidden"
+        style={{ maxHeight: isMenuOpen ? "100vh" : "0" }}
       >
-        <div className="flex flex-col items-center py-4">
+        <div className="flex flex-col items-center py-4 text-black">
           {navItems.map((item, index) => (
-            <NavItem key={index} {...item} isActive={pathname === item.href} />
+            <NavItem
+              key={index}
+              {...item}
+              isActive={pathname === item.href}
+              onClick={() => setIsMenuOpen(false)}
+            />
           ))}
         </div>
       </div>

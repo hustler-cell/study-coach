@@ -8,7 +8,7 @@ export default function ComingSoon() {
           Coming Soon!
         </h1>
         <p className="description leading-6 text-2xl mt-4 text-[#4a5568]">
-          We're working hard to bring you the ultimate student coaching
+          We&apos;re working hard to bring you the ultimate student coaching
           experience. Stay tuned!
         </p>
         {/* <div className="image-container">

@@ -1,6 +1,8 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { images } from "../constants";
+import emailjs from "@emailjs/browser";
 
 const { bestOpper, increment, travel, monthlySalary, safety } = images;
 
@@ -42,7 +44,73 @@ const tutorFacilityData = [
   },
 ];
 
+type FormDataType = {
+  name: string;
+  mobile: string;
+  address: string;
+  city: string;
+  qualification: string;
+  message: string;
+};
 const EducatorDetails = () => {
+  const [formData, setFormData] = useState<FormDataType>({
+    name: "",
+    mobile: "",
+    address: "",
+    city: "",
+    qualification: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    console.log("email called");
+
+    e.preventDefault();
+
+    emailjs
+      .send(
+        "service_wxjn4vi", // Replace with your EmailJS service ID
+        "template_6cepqjl", // Replace with your EmailJS template ID
+        {
+          user_name: formData.name,
+          user_mobile: formData.mobile,
+          user_address: formData.address,
+          user_city: formData.city,
+          user_qualification: formData.qualification,
+          user_message: formData.message,
+        },
+        "zKWWSocsSjrWRkl1W" // Replace with your EmailJS public key
+      )
+      .then(
+        (response) => {
+          alert("Form submitted successfully!");
+          console.log("SUCCESS!", response.status, response.text);
+          setFormData({
+            name: "",
+            mobile: "",
+            address: "",
+            city: "",
+            qualification: "",
+            message: "",
+          });
+        },
+        (error) => {
+          alert("Failed to send email, please try again.");
+          console.log("FAILED...", error);
+        }
+      );
+  };
+
   return (
     <main className="main_container flex flex-col md:flex-row md:justify-around md:gap-0 gap-10 md:px-0 shadow-md">
       {/* left card */}
@@ -79,22 +147,39 @@ const EducatorDetails = () => {
         <div className="font-semibold text-2xl md:text-3xl text-center md:text-left text-black">
           JOIN AS EDUCATOR
         </div>
-        <div className="input_container flex flex-col gap-6 md:gap-8">
+        <form
+          onSubmit={sendEmail}
+          className="input_container flex flex-col gap-6 md:gap-8"
+        >
           {[
-            { id: "nameInput", label: "Full Name", type: "text" },
-            { id: "mobileInput", label: "Mobile Number", type: "number" },
-            { id: "addressInput", label: "Current Address", type: "text" },
-            { id: "cityInput", label: "Current City", type: "text" },
+            { name: "name", id: "name", label: "Full Name", type: "text" },
             {
-              id: "qualificationInput",
+              name: "mobile",
+              id: "mobile",
+              label: "Mobile Number",
+              type: "number",
+            },
+            {
+              name: "address",
+              id: "address",
+              label: "Current Address",
+              type: "text",
+            },
+            { name: "city", id: "city", label: "Current City", type: "text" },
+            {
+              name: "qualification",
+              id: "qualification",
               label: "Highest Qualification",
               type: "text",
             },
-          ].map(({ id, label, type }) => (
+          ].map(({ name, id, label, type }) => (
             <div key={id} className="name_input relative w-full md:w-[80%]">
               <input
                 type={type}
                 id={id}
+                name={name}
+                value={formData[name as keyof FormDataType]}
+                onChange={handleChange}
                 placeholder=" "
                 className="peer w-full border-2 border-gray-300 rounded-md px-3 pt-4 pb-2 text-sm text-gray-900 placeholder-transparent focus:outline-none focus:border-black"
               />
@@ -109,6 +194,9 @@ const EducatorDetails = () => {
           <div className="name_input relative w-full md:w-[80%]">
             <textarea
               id="msgInput"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
               placeholder=" "
               className="peer w-full border-2 border-gray-300 rounded-md px-3 pt-4 pb-2 text-sm text-gray-900 placeholder-transparent focus:outline-none focus:border-black"
             />
@@ -116,15 +204,15 @@ const EducatorDetails = () => {
               htmlFor="msgInput"
               className="absolute bg-white px-1 left-3 top-[-12px] text-gray-500 text-sm font-normal transition-all peer-placeholder-shown:top-[10px] peer-placeholder-shown:left-[12px] peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:top-[-9px] peer-focus:left-3 peer-focus:text-sm"
             >
-              Please tell us how we can help
+              Additional Information
             </label>
           </div>
-        </div>
-        <div className="send_btn">
-          <button className="bg-[#0F509C] text-zinc-100 font-bold w-1/3 max-md:w-full py-3 rounded-md">
-            Submit
-          </button>
-        </div>
+          <div className="send_btn">
+            <button className="bg-[#0F509C] text-zinc-100 font-bold w-1/3 max-md:w-full py-3 rounded-md">
+              Submit
+            </button>
+          </div>
+        </form>
       </div>
     </main>
   );
