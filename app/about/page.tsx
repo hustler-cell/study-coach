@@ -1,10 +1,17 @@
+import AboutBanner from "./aboutBanner";
+import JourneyBanner from "./journeyBanner";
+import OfferBanner from "./offerBanner";
+import OurMission from "./ourMission";
+import ValuesBanner from "./valuesBanner";
+
 export default function About() {
-    return (
-      <main className="container mx-auto mt-8">
-        <h1 className="text-3xl font-bold">About Us</h1>
-        <p className="mt-4">Learn more about our company and our mission.</p>
-      </main>
-    )
-  }
-  
-  
+  return (
+    <main className="container mx-auto mt-8">
+      <AboutBanner />
+      <JourneyBanner />
+      <OfferBanner />
+      <ValuesBanner />
+      <OurMission />
+    </main>
+  );
+}
