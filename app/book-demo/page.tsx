@@ -4,7 +4,7 @@ import { FaqContent } from "../join-as-educator/faqContent";
 
 export default function bookDemo() {
   return (
-    <main className="bg-white">
+    <main className="container mx-auto bg-white">
       <DemoBanner />
       <StudentDetails />
       <FaqContent />
