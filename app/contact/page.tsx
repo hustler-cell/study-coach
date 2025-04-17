@@ -5,7 +5,7 @@ import "./styles.css";
 export default function Contact() {
   return (
     <>
-      <main className="main_container">
+      <main className="container mx-auto main_container">
         <div className="contact_container">
           <GetInTouch />
           <FreqQues />

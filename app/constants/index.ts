@@ -43,6 +43,14 @@ import ButtonImg from "../../public/Images/bookDemo/calenderIcon.png";
 
 //404
 import NotFound from "../../public/Images/404.png";
+//About Us
+import AboutHeroBg from "../../public/Images/aboutUs/heroBg.png";
+import JourneyImg from "../../public/Images/aboutUs/ourJourney.png";
+import ValuesImg from "../../public/Images/aboutUs/ourValues.png";
+import ForStudent from "../../public/Images/aboutUs/forStudent.png";
+import ForEducator from "../../public/Images/aboutUs/forEdu.png";
+import ForParents from "../../public/Images/aboutUs/chart.png";
+import TickIcon from "../../public/Images/aboutUs/tick.png";
 
 export const images = {
   landingHeroImg,
@@ -85,4 +93,12 @@ export const images = {
   ButtonImg,
   //---------------
   NotFound,
+  //---------------
+  AboutHeroBg,
+  JourneyImg,
+  ValuesImg,
+  ForStudent,
+  ForEducator,
+  ForParents,
+  TickIcon,
 };

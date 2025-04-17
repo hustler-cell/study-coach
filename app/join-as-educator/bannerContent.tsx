@@ -15,6 +15,7 @@ export const BannerContent: React.FC = () => {
       {
         text: "BOOK FREE DEMO",
         variant: "primary" as const,
+        href: "/book-demo",
       },
       {
         text: "Free classes for NEET & Coding",
