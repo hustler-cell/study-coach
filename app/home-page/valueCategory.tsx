@@ -3,18 +3,20 @@ import { CategoryCardProps } from "../types";
 import { images } from "../constants";
 import Image from "next/image";
 
-const { ourValueBgImg,homeTution,onlineClasses } = images;
+const { ourValueBgImg, homeTution, onlineClasses } = images;
 const categories: CategoryCardProps[] = [
   {
     icon: homeTution,
     title: "Home Tuition",
-    description: "Offering personalized home tuition for focused and effective learning at your convenience.",
+    description:
+      "Personalized, one-on-one learning at your convenience for better academic success.",
   },
   {
     icon: onlineClasses,
     title: "Online Classes",
-    description: "Providing interactive online classes for flexible and engaging learning from anywhere.",
-  }
+    description:
+      "Interactive virtual lessons that provide flexibility and engagement from anywhere.",
+  },
 ];
 
 export const ValueCategories: React.FC = () => {
@@ -26,7 +28,10 @@ export const ValueCategories: React.FC = () => {
         </div>
         <div className="flex flex-col sm:flex-row gap-8 w-full lg:w-2/2">
           {categories.map((category, index) => (
-            <div key={index} className="flex flex-col text-center p-6 sm:p-8 lg:p-12 bg-white rounded-3xl shadow-lg w-full sm:w-1/2 lg:w-auto">
+            <div
+              key={index}
+              className="flex flex-col text-center p-6 sm:p-8 lg:p-12 bg-white rounded-3xl shadow-lg w-full sm:w-1/2 lg:w-auto"
+            >
               <Image
                 loading="lazy"
                 src={category.icon}
@@ -47,9 +52,8 @@ export const ValueCategories: React.FC = () => {
       </div>
       <div
         className="h-[140vh]  absolute inset-0 bg-cover bg-no-repeat z-0"
-        style={{ backgroundImage: `url(${ourValueBgImg.src})`, top: '-60px' }}
+        style={{ backgroundImage: `url(${ourValueBgImg.src})`, top: "-60px" }}
       ></div>
     </div>
   );
 };
-
