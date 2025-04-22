@@ -6,9 +6,9 @@ export const HeroSectionContent: React.FC = () => {
   const { landingHeroImg } = images;
   console.log(landingHeroImg, "landingHeroImg");
   const heroData = {
-    title: "Best Home Tutor in Bhubaneswar",
+    title: "Find the Best Tutor in Bhubaneswar",
     description:
-      "Finding Home Tutor in Bhubaneswar is now easier. Join us on a transformative journey to unlock your child's full potential",
+      "Looking for a home tutor in Bhubaneswar? We make it easy! Empower your child with expert guidance.",
     buttons: [
       {
         text: "BOOK FREE DEMO",

@@ -13,48 +13,46 @@ const popularPages = [
 ];
 
 export const Footer = () => {
-  const {rightArrowWhite,instagram,twitter,facebook,footerlogo}=images;
-    const ContactButton = ({ text, iconSrc, alt }: ContactButtonProps) => (
-      <button 
-  className="flex justify-between flex-auto gap-4 
+  const { rightArrowWhite, instagram, twitter, facebook, footerlogo } = images;
+  const ContactButton = ({ text, iconSrc, alt }: ContactButtonProps) => (
+    <button
+      className="flex justify-between flex-auto gap-4 
              px-4 py-6 sm:px-6 sm:py-4 md:px-8 md:py-6
              bg-[#0F509C] rounded-xl border border-solid border-zinc-300 
              text-base sm:text-lg md:text-xl font-bold leading-none text-white 
              hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 
              focus:ring-offset-2"
-  tabIndex={0}
->
-  <span>{text}</span>
-  <Image
-    loading="lazy"
-    src={iconSrc}
-    alt={alt}
-    className="object-contain shrink-0 self-start aspect-[1.19] w-[20px] sm:w-[22px] md:w-[25px]"
-  />
-</button>
-
-    
-      );
-    const FooterLink = ({ text }: FooterLinkProps) => (
-        <div className="mt-2.5 text-base leading-8 text-white hover:text-gray-300 cursor-pointer">
-          {text}
-        </div>
-      );
-    const SocialIcon = ({ src, alt }: SocialIconProps) => (
-        <Image
-          loading="lazy"
-          src={src}
-          alt={alt}
-          className="object-contain shrink-0 w-9 aspect-[1.09]"
-        />
-      );
+      tabIndex={0}
+    >
+      <span>{text}</span>
+      <Image
+        loading="lazy"
+        src={iconSrc}
+        alt={alt}
+        className="object-contain shrink-0 self-start aspect-[1.19] w-[20px] sm:w-[22px] md:w-[25px]"
+      />
+    </button>
+  );
+  const FooterLink = ({ text }: FooterLinkProps) => (
+    <div className="mt-2.5 text-base leading-8 text-white hover:text-gray-300 cursor-pointer">
+      {text}
+    </div>
+  );
+  const SocialIcon = ({ src, alt }: SocialIconProps) => (
+    <Image
+      loading="lazy"
+      src={src}
+      alt={alt}
+      className="object-contain shrink-0 w-9 aspect-[1.09]"
+    />
+  );
   return (
-    <div className="flex flex-col pt-20 rounded-none mt-[10%]">
+    <div className="flex flex-col pt-20 rounded-none bg-red">
       <div className="flex flex-col  pb-20 w-full bg-sky-950 max-md:px-5 max-sm:px-1 max-md:max-w-full">
-        <div className="z-10 self-center px-14 pt-16 pb-10 -mt-20 max-w-full bg-white rounded-xl border-2 border-solid border-zinc-300 w-[85%] max-md:px-5">
+        <div className="z-10 self-center px-14 pt-12 pb-10 -mt-20 max-w-full bg-white rounded-xl border-2 border-solid border-zinc-300 w-[85%] max-md:px-5">
           <div className="flex gap-5 max-md:flex-col">
             <div className="flex flex-col w-[43%] max-md:ml-0 max-md:w-full">
-              <div className="flex flex-col grow max-md:mt-10 max-md:max-w-full ">
+              <div className="flex flex-col grow max-md:max-w-full ">
                 <h2 className="self-start text-2xl font-medium leading-relaxed text-slate-900">
                   GET IN TOUCH
                 </h2>
@@ -127,14 +125,13 @@ export const Footer = () => {
                 <h3 className="self-start text-lg font-medium leading-loose">
                   Contact Study Coach
                 </h3>
-                <div className="mt-5 max-md:mr-2.5">
+                {/* <div className="mt-5 max-md:mr-2.5">
                   Customer Support (Parent) - 995995995
-                </div>
-                <div className="mt-2.5">
-                  Customer Support (Educator) - 995995995
-                </div>
+                </div> */}
+                <div className="mt-2.5">Customer Support - +91 9668830450</div>
                 <div className="mt-1.5">
-                  Head Office - Kendranaya , Praprem Palace
+                  Head Office - Plot No -76/1807, Millennium City, Pahala,
+                  Bhubaneswar, 752101
                 </div>
               </div>
             </div>

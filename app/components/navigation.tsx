@@ -31,12 +31,12 @@ const NavItem: React.FC<NavItemProps> = ({
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Learnings", href: "/learnings" },
+  // { label: "Services", href: "/services" },
+  // { label: "Learnings", href: "/learnings" },
   { label: "Contact Us", href: "/contact" },
   { label: "About Us", href: "/about" },
   // { label: "Educator", href: "/join-as-educator" },
-  // { label: "Book Demo", href: "/book-demo" },
+  { label: "Book Demo", href: "/book-demo" },
   // { label: "404", href: "/404" },
 ];
 
@@ -60,9 +60,13 @@ const Navigation: React.FC = () => {
           />
         </Link>
         <div className="hidden lg:flex flex-wrap gap-10 items-start text-[16px] self-end">
-          {navItems.map((item, index) => (
-            <NavItem key={index} {...item} isActive={pathname === item.href} />
-          ))}
+          {navItems.map((item, index) => {
+            const isHome = item.href === "/";
+            const isActive = isHome
+              ? pathname === "/"
+              : pathname.startsWith(item.href);
+            return <NavItem key={index} {...item} isActive={isActive} />;
+          })}
         </div>
         <HamburgerIcon isOpen={isMenuOpen} onClick={toggleMenu} />
       </nav>
@@ -73,14 +77,20 @@ const Navigation: React.FC = () => {
         style={{ maxHeight: isMenuOpen ? "100vh" : "0" }}
       >
         <div className="flex flex-col items-center py-4 text-black">
-          {navItems.map((item, index) => (
-            <NavItem
-              key={index}
-              {...item}
-              isActive={pathname === item.href}
-              onClick={() => setIsMenuOpen(false)}
-            />
-          ))}
+          {navItems.map((item, index) => {
+            const isHome = item.href === "/";
+            const isActive = isHome
+              ? pathname === "/"
+              : pathname.startsWith(item.href);
+            return (
+              <NavItem
+                key={index}
+                {...item}
+                isActive={isActive}
+                onClick={() => setIsMenuOpen(false)}
+              />
+            );
+          })}
         </div>
       </div>
     </div>
