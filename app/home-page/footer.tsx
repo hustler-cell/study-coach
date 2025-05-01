@@ -124,6 +124,12 @@ export const Footer = () => {
                   if (link === "Contact") {
                     path = "/contact"; // explicit redirect for Contact
                   }
+                  if (link === "Terms and condition") {
+                    path = "/terms-and-conditions";
+                  }
+                  if (link === "Privacy") {
+                    path = "/privacy-policy";
+                  }
 
                   return (
                     <FooterLink
