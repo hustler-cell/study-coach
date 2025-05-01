@@ -6,27 +6,52 @@ import { FaqDataProps } from "../types";
 const faqData: FaqDataProps[] = [
   {
     id: 1,
-    question: "How long until we deliver your first blog post?",
-    answer:
-      "It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we MUST do before writing your first blog post.",
+    question: "How can I become a tutor at StudyCoach?",
+    answer: `1.	Fill Out the Form: Start by filling out the application form on our website.
+2.	Get Contacted: After we receive your application, one of our team members will get in touch with you.
+3.	Interview: We’ll schedule an interview to talk about your experience and teaching style. Start your tutoring journey with StudyCoach today!`,
   },
   {
     id: 2,
-    question: "What is our approach to content marketing?",
+    question: "Will StudyCoach provide any training before I start teaching?",
     answer:
-      "Our approach involves understanding your audience, creating tailored content strategies, and ensuring consistent delivery to maximize engagement.",
+      "Yes, we offer basic guidelines and tips to help you understand our teaching standards    and how to deliver the best learning experience to students.",
   },
   {
     id: 3,
-    question: "Can we handle custom content requests?",
+    question: "Can I work part-time as a tutor with StudyCoach?",
     answer:
-      "Absolutely! We work closely with our clients to understand their needs and create custom content that aligns with their goals.",
+      "Yes! You can work part-time depending on your availability. We offer flexible schedules to fit your needs.",
   },
   {
     id: 4,
-    question: "What industries do we specialize in?",
+    question: "How much will I earn as a Home Tutor at StudyCoach?",
     answer:
-      "We specialize in a wide range of industries including technology, healthcare, finance, and more. Our versatile team adapts to your industry needs.",
+      "Your salary as a Home Tutor depends on your qualifications and interview. We’ll discuss the exact details during the hiring process.",
+  },
+  {
+    id: 5,
+    question: "Will I get a travel allowance?",
+    answer:
+      "Yes, if you need to travel more than 5 km for classes, we will provide a travel allowance.",
+  },
+  {
+    id: 6,
+    question: "What are the working hours and number of classes for tutors?",
+    answer:
+      "The class timings and number of sessions depend on your availability and schedule.",
+  },
+  {
+    id: 7,
+    question: "Can I choose the subjects and classes I want to teach?",
+    answer:
+      "Yes! You can tell us your preferred subjects and classes during the application process. We will try to match you with students accordingly.",
+  },
+  {
+    id: 8,
+    question: "How often will I get paid?",
+    answer:
+      "Tutors are usually paid monthly by StudyCoach. Payment details will be shared with you during onboarding.",
   },
 ];
 

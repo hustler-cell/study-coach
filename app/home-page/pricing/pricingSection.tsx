@@ -6,7 +6,7 @@ import { images } from "@/app/constants";
 const { grayTick, tickMark } = images;
 const pricingPlans: PricingPlan[] = [
   {
-    price: "2099",
+    price: "2499",
     period: "/month",
     title: "Home Tutor For LKG,UKG",
     features: [
@@ -19,7 +19,7 @@ const pricingPlans: PricingPlan[] = [
     buttonText: "Choose plan",
   },
   {
-    price: "2599",
+    price: "3099",
     period: "/month",
     title: "Home Tutor For STD 1-5",
     features: [
@@ -32,7 +32,7 @@ const pricingPlans: PricingPlan[] = [
     buttonText: "Choose plan",
   },
   {
-    price: "3099",
+    price: "3599",
     period: "/month",
     title: "Home Tutor For STD 6-8",
     features: [
@@ -46,7 +46,7 @@ const pricingPlans: PricingPlan[] = [
     buttonText: "Choose plan",
   },
   {
-    price: "3599",
+    price: "3999",
     period: "/month",
     title: "Home Tutor For STD 9-10",
     features: [

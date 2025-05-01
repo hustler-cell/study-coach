@@ -13,35 +13,27 @@ interface faqData {
 const freqAskedData: faqData[] = [
   {
     id: 1,
-    question:
-      "Do I need to pay to Instapay even when there is no transaction going on in my business?",
+    question: "What is StudyCoach and how can it benefit my child’s education?",
     answer:
-      "No, you do not need to pay Instapay where there is no transaction happening. With one of the lowest transaction charges in the industry, pay only when you get paid!",
+      "StudyCoach is a leading tuition provider committed to enhancing students' learning journeys. We offer professional home tuition for students in grades 1-12, specializing in the ICSE, CHSE, and CBSE boards. With a 4.9-star rating on Google, we’ve earned the trust of parents who rely on our personalized teaching approach. For more details, visit our official website: 🌐 https://www.studycoach.co.in/",
   },
   {
     id: 2,
-    question: "What is a Payment Gateway?",
+    question: "What subjects are available for tuition at StudyCoach?",
     answer:
-      "No, you do not need to pay Instapay where there is no transaction happening. With one of the lowest transaction charges in the industry, pay only when you get paid!",
+      "At StudyCoach, we offer tuition across a variety of subjects, including Mathematics, Science, English, History, and more. For a full list of available subjects, please check our website 🌐 https://www.studycoach.co.in/.",
   },
   {
     id: 3,
-    question: "What platforms does ACME payment gateway support?",
+    question: "How can I enroll my child in StudyCoach’s tuition program?",
     answer:
-      "No, you do not need to pay Instapay where there is no transaction happening. With one of the lowest transaction charges in the industry, pay only when you get paid!",
+      "Enrolling your child in StudyCoach is easy! Simply fill out the enrollment form on our website or reach out to our customer service team at 📞 +91 9668830450 for assistance.",
   },
   {
     id: 4,
-    question: "Does ACME provide international payments support?",
+    question: "Are there any registration fees to join StudyCoach’s classes?",
     answer:
-      "No, you do not need to pay Instapay where there is no transaction happening. With one of the lowest transaction charges in the industry, pay only when you get paid!",
-  },
-  {
-    id: 5,
-    question:
-      "Is there any setup fee or annual maintenance fee that I need to pay regularly?",
-    answer:
-      "No, you do not need to pay Instapay where there is no transaction happening. With one of the lowest transaction charges in the industry, pay only when you get paid!",
+      "No need to worry — there are no registration fees at StudyCoach! 😉 We believe in making quality education accessible without extra costs.",
   },
 ];
 
