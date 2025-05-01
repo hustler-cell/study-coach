@@ -1,7 +1,9 @@
+"use client";
 import * as React from "react";
 import { SocialIconProps, FooterLinkProps, ContactButtonProps } from "../types";
 import { images } from "../constants";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const legalLinks = ["Terms and condition", "Privacy", "Cookies", "Contact"];
 const popularPages = [
@@ -13,9 +15,16 @@ const popularPages = [
 ];
 
 export const Footer = () => {
+  const router = useRouter();
   const { rightArrowWhite, instagram, twitter, facebook, footerlogo } = images;
-  const ContactButton = ({ text, iconSrc, alt }: ContactButtonProps) => (
+  const ContactButton = ({
+    text,
+    iconSrc,
+    alt,
+    onClick,
+  }: ContactButtonProps) => (
     <button
+      onClick={onClick}
       className="flex justify-between flex-auto gap-4 
              px-4 py-6 sm:px-6 sm:py-4 md:px-8 md:py-6
              bg-[#0F509C] rounded-xl border border-solid border-zinc-300 
@@ -33,8 +42,11 @@ export const Footer = () => {
       />
     </button>
   );
-  const FooterLink = ({ text }: FooterLinkProps) => (
-    <div className="mt-2.5 text-base leading-8 text-white hover:text-gray-300 cursor-pointer">
+  const FooterLink = ({ text, onClick }: FooterLinkProps) => (
+    <div
+      onClick={onClick}
+      className="mt-2.5 text-base leading-8 text-white hover:text-gray-300 cursor-pointer"
+    >
       {text}
     </div>
   );
@@ -67,11 +79,13 @@ export const Footer = () => {
                   text="BOOK A DEMO"
                   iconSrc={rightArrowWhite}
                   alt="Book a demo icon"
+                  onClick={() => router.push("/book-demo")}
                 />
                 <ContactButton
                   text="GET IN TOUCH"
                   iconSrc={rightArrowWhite}
                   alt="Get in touch icon"
+                  onClick={() => router.push("/contact")}
                 />
               </div>
             </div>
@@ -105,9 +119,20 @@ export const Footer = () => {
             <div className="flex flex-col ml-5 w-[18%] max-md:ml-0 max-md:w-full">
               <div className="flex flex-col items-start text-base leading-8 text-white max-md:mt-10">
                 <h3 className="text-lg font-medium leading-loose">Legal</h3>
-                {legalLinks.map((link, index) => (
-                  <FooterLink key={index} text={link} />
-                ))}
+                {legalLinks.map((link, index) => {
+                  let path = "/" + link.toLowerCase().replace(/\s+/g, "-");
+                  if (link === "Contact") {
+                    path = "/contact"; // explicit redirect for Contact
+                  }
+
+                  return (
+                    <FooterLink
+                      key={index}
+                      text={link}
+                      onClick={() => router.push(path)}
+                    />
+                  );
+                })}
               </div>
             </div>
             <div className="flex flex-col ml-5 w-[18%] max-md:ml-0 max-md:w-full">
@@ -115,9 +140,19 @@ export const Footer = () => {
                 <h3 className="text-lg font-medium leading-loose">
                   Popular Pages
                 </h3>
-                {popularPages.map((page, index) => (
-                  <FooterLink key={index} text={page} />
-                ))}
+                {popularPages.map((page, index) => {
+                  let path = "/" + page.toLowerCase().replace(/\s+/g, "-");
+                  if (page === "Student Registration") {
+                    path = "/book-demo"; // override route
+                  }
+                  return (
+                    <FooterLink
+                      key={index}
+                      text={page}
+                      onClick={() => router.push(path)}
+                    />
+                  );
+                })}
               </div>
             </div>
             <div className="flex flex-col ml-5 w-[36%] max-md:ml-0 max-md:w-full">

@@ -8,7 +8,7 @@ const benefitsData = [
       "https://cdn.builder.io/api/v1/image/assets/0875a60df1154a34920056571d8491d3/33f654e97ba05c20d9c85085d076c4ca33055cc6d178bf648f40e1d2539dab77?placeholderIfAbsent=true",
     title: "Free Demo",
     description:
-      "Experience our teaching quality before you commit with a free demo class. Switch Experience our teaching quality before you commit with a free demo class. Switch ...",
+      "Try a free demo class to experience our exceptional teaching before making a commitment. Enjoy the freedom to switch teachers anytime and explore our flexible pricing options. Start your personalized learning journey with StudyCoach today.",
     hasBackground: true,
   },
   {
@@ -16,7 +16,7 @@ const benefitsData = [
       "https://cdn.builder.io/api/v1/image/assets/0875a60df1154a34920056571d8491d3/a8affafadd2cff5a0aa5ea3f6f945faa59ed7c7338249f160f2df36cedc43877?placeholderIfAbsent=true",
     title: "Customizable Classes",
     description:
-      "Our one-on-one instruction ensures a customized learning experience.",
+      "Our personalized one-on-one instruction and customized curriculum are designed to support your unique learning needs and help you achieve your academic goals.",
     hasBackground: false,
   },
   {
@@ -24,7 +24,7 @@ const benefitsData = [
       "https://cdn.builder.io/api/v1/image/assets/0875a60df1154a34920056571d8491d3/ea6108ec77ffda4bc6579967d3300f7a795e5ceb2028ff288abd3f62cb9fa99a?placeholderIfAbsent=true",
     title: "Flexible Educator Selection",
     description:
-      "Learn from experienced professionals who are dedicated to your success.",
+      "Personalize your learning experience with StudyCoach's one-on-one instruction and the flexibility to switch teachers anytime.",
     hasBackground: false,
   },
   {
@@ -32,15 +32,15 @@ const benefitsData = [
       "https://cdn.builder.io/api/v1/image/assets/0875a60df1154a34920056571d8491d3/33f654e97ba05c20d9c85085d076c4ca33055cc6d178bf648f40e1d2539dab77?placeholderIfAbsent=true",
     title: "Dedicated Mentorship",
     description:
-      "Experience our teaching quality before you commit with a free demo class. Switch Experience our teaching quality before you commit with a free demo class. Switch ...",
+      "Unlock your full potential with our dedicated mentorship program. Receive personalized advice, encouragement, and expert insights from mentors who are committed to helping you succeed at every step of your journey",
     hasBackground: true,
   },
   {
     imageUrl:
       "https://cdn.builder.io/api/v1/image/assets/0875a60df1154a34920056571d8491d3/a8affafadd2cff5a0aa5ea3f6f945faa59ed7c7338249f160f2df36cedc43877?placeholderIfAbsent=true",
-    title: "Personalized Learning Experience",
+    title: "Personalized Learning",
     description:
-      "Our one-on-one instruction ensures a customized learning experience.",
+      "Transform your learning journey with StudyCoach! Our personalized learning experience is tailored just for you — learn at your own pace, with content and support designed to help you succeed and reach your goals faster.",
     hasBackground: false,
   },
   {
@@ -48,7 +48,7 @@ const benefitsData = [
       "https://cdn.builder.io/api/v1/image/assets/0875a60df1154a34920056571d8491d3/ea6108ec77ffda4bc6579967d3300f7a795e5ceb2028ff288abd3f62cb9fa99a?placeholderIfAbsent=true",
     title: "Expert Tutors",
     description:
-      "Learn from experienced professionals who are dedicated to your success.",
+      "Learn from the best at StudyCoach! Our expert tutors provide one-on-one guidance and support, ensuring you gain the skills and confidence needed to excel. Get the personalized attention you deserve and unlock your full potential.",
     hasBackground: false,
   },
 ];

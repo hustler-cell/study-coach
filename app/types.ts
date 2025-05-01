@@ -138,29 +138,30 @@ export interface SocialIconProps {
 
 export interface FooterLinkProps {
   text: string;
+  onClick?: () => void;
 }
 
 export interface ContactButtonProps {
   text: string;
   iconSrc: StaticImport;
   alt: string;
+  onClick?: () => void;
 }
 
+export interface BenefitItem {
+  imageUrl: string;
+  title: string;
+  description: string;
+  hasBackground?: boolean;
+}
 
-  export interface BenefitItem {
-    imageUrl: string;
-    title: string;
-    description: string;
-    hasBackground?: boolean;
-  }
-  
-  export interface BenefitsRowProps {
-    benefits: BenefitItem[];
-  }
+export interface BenefitsRowProps {
+  benefits: BenefitItem[];
+}
 
-  export interface BenefitCardProps {
-    imageUrl: string;
-    title: string;
-    description: string;
-    hasBackground?: boolean;
-  }
+export interface BenefitCardProps {
+  imageUrl: string;
+  title: string;
+  description: string;
+  hasBackground?: boolean;
+}

@@ -34,7 +34,7 @@ const navItems = [
   // { label: "Services", href: "/services" },
   // { label: "Learnings", href: "/learnings" },
   { label: "Contact Us", href: "/contact" },
-  { label: "About Us", href: "/about" },
+  { label: "About Us", href: "/about-us" },
   // { label: "Educator", href: "/join-as-educator" },
   { label: "Book Demo", href: "/book-demo" },
   // { label: "404", href: "/404" },
