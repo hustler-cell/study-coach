@@ -121,7 +121,7 @@ const EducatorDetails = () => {
         "6p39jM7RWEypSj3Dj" // Replace with your EmailJS public key
       )
       .then(
-        (response) => {
+        () => {
           toast.success("Form submitted successfully!");
           // console.log("SUCCESS!", response.status, response.text);
           setFormData({
@@ -135,7 +135,7 @@ const EducatorDetails = () => {
             referral: "",
           });
         },
-        (error) => {
+        () => {
           toast.error("Failed to send email. Please try again.");
           // console.log("FAILED...", error);
         }
