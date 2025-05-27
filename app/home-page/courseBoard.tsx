@@ -26,7 +26,7 @@ export const CourseBoard: React.FC = () => {
         imageSrc:
           "https://cdn.builder.io/api/v1/image/assets/0875a60df1154a34920056571d8491d3/ef10af8f19678e2e24a73a6c011e539a99a47d619e16a0889e7ef78d4f34cd94?apiKey=0875a60df1154a34920056571d8491d3&",
         imageAlt: "State board illustration",
-        boardType: "STATE BOARD",
+        boardType: "BSE",
       },
     ],
   };

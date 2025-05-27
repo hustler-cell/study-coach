@@ -59,7 +59,7 @@ export const Footer = () => {
     />
   );
   return (
-    <div className="flex flex-col pt-20 rounded-none bg-red">
+    <div className="flex flex-col pt-20 rounded-none bg-white">
       <div className="flex flex-col  pb-20 w-full bg-sky-950 max-md:px-5 max-sm:px-1 max-md:max-w-full">
         <div className="z-10 self-center px-14 pt-12 pb-10 -mt-20 max-w-full bg-white rounded-xl border-2 border-solid border-zinc-300 w-[85%] max-md:px-5">
           <div className="flex gap-5 max-md:flex-col">
