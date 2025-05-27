@@ -3,6 +3,8 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { images } from "../constants";
 import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const { bestOpper, increment, travel, monthlySalary, safety } = images;
 
@@ -46,20 +48,24 @@ const tutorFacilityData = [
 
 type FormDataType = {
   name: string;
+  email: string;
   mobile: string;
   address: string;
   city: string;
   qualification: string;
   message: string;
+  referral?: string;
 };
 const EducatorDetails = () => {
   const [formData, setFormData] = useState<FormDataType>({
     name: "",
+    email: "",
     mobile: "",
     address: "",
     city: "",
     qualification: "",
     message: "",
+    referral: "",
   });
 
   const handleChange = (
@@ -72,47 +78,73 @@ const EducatorDetails = () => {
     }));
   };
 
+  const validateForm = () => {
+    const requiredFields = [
+      "name",
+      "email",
+      "mobile",
+      "address",
+      "city",
+      "qualification",
+    ];
+    for (const field of requiredFields) {
+      if (!formData[field as keyof FormDataType]) {
+        toast.error(
+          `${field.charAt(0).toUpperCase() + field.slice(1)} is required.`
+        );
+        return false;
+      }
+    }
+    return true;
+  };
+
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     console.log("email called");
 
     e.preventDefault();
 
+    if (!validateForm()) return;
     emailjs
       .send(
-        "service_wxjn4vi", // Replace with your EmailJS service ID
-        "template_6cepqjl", // Replace with your EmailJS template ID
+        "service_e66wt85", // Replace with your EmailJS service ID
+        "template_m0zh5u7", // Replace with your EmailJS template ID
         {
           user_name: formData.name,
+          user_email: formData.email,
           user_mobile: formData.mobile,
           user_address: formData.address,
           user_city: formData.city,
           user_qualification: formData.qualification,
           user_message: formData.message,
+          user_referral: formData.referral || "",
         },
-        "zKWWSocsSjrWRkl1W" // Replace with your EmailJS public key
+        "6p39jM7RWEypSj3Dj" // Replace with your EmailJS public key
       )
       .then(
         (response) => {
-          alert("Form submitted successfully!");
-          console.log("SUCCESS!", response.status, response.text);
+          toast.success("Form submitted successfully!");
+          // console.log("SUCCESS!", response.status, response.text);
           setFormData({
             name: "",
+            email: "",
             mobile: "",
             address: "",
             city: "",
             qualification: "",
             message: "",
+            referral: "",
           });
         },
         (error) => {
-          alert("Failed to send email, please try again.");
-          console.log("FAILED...", error);
+          toast.error("Failed to send email. Please try again.");
+          // console.log("FAILED...", error);
         }
       );
   };
 
   return (
     <main className="main_container flex flex-col md:flex-row md:justify-around md:gap-0 gap-10 md:px-0 shadow-md">
+      <ToastContainer position="bottom-center" autoClose={3000} />
       {/* left card */}
       <div className="left_card bg-[#0F509C] md:w-1/2 w-full flex flex-col gap-5 md:gap-7 items-center text-white px-2 sm:px-6 md:px-12 py-2 sm:py-6 md:py-16 max-md:shadow-xl">
         <div className="font-medium text-2xl md:text-3xl text-center">
@@ -154,6 +186,13 @@ const EducatorDetails = () => {
           {[
             { name: "name", id: "name", label: "Full Name", type: "text" },
             {
+              name: "email",
+              id: "email",
+              label: "Email Address",
+              type: "email",
+            },
+
+            {
               name: "mobile",
               id: "mobile",
               label: "Mobile Number",
@@ -170,6 +209,12 @@ const EducatorDetails = () => {
               name: "qualification",
               id: "qualification",
               label: "Highest Qualification",
+              type: "text",
+            },
+            {
+              name: "referral",
+              id: "referral",
+              label: "Referral Code (Optional)",
               type: "text",
             },
           ].map(({ name, id, label, type }) => (
@@ -207,6 +252,7 @@ const EducatorDetails = () => {
               Additional Information
             </label>
           </div>
+
           <div className="send_btn">
             <button className="bg-[#0F509C] text-zinc-100 font-bold w-1/3 max-md:w-full py-3 rounded-md">
               Submit
