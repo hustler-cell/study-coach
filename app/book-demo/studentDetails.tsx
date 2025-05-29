@@ -2,8 +2,10 @@
 import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { images } from "../constants";
 import Image from "next/image";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-// Form data type declaration
 interface FormData {
   studentName: string;
   gender: string;
@@ -17,6 +19,7 @@ interface FormData {
 
 const StudentDetails = () => {
   const { BannerImg, ButtonImg } = images;
+
   const [formData, setFormData] = useState<FormData>({
     studentName: "",
     gender: "",
@@ -28,15 +31,19 @@ const StudentDetails = () => {
     date: "",
   });
 
-  const [isFormValid, setIsFormvalid] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(false);
   const today = new Date().toISOString().split("T")[0];
 
-  //check all fields are filled & valid
   useEffect(() => {
-    const isValid =
-      Object.values(formData).every((field) => field.trim() !== "") &&
-      /^[0-9]{6}$/.test(formData.pincode); //validate pincode
-    setIsFormvalid(isValid);
+    const requiredFieldsFilled =
+      formData.studentName.trim() &&
+      formData.gender &&
+      formData.location.trim() &&
+      formData.schoolBoard &&
+      formData.phoneNumber.trim() &&
+      formData.date;
+
+    setIsFormValid(Boolean(requiredFieldsFilled));
   }, [formData]);
 
   const handleChange = (
@@ -55,12 +62,46 @@ const StudentDetails = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (isFormValid) {
-      console.log("Form Submitted:", formData);
-    }
+    if (!isFormValid) return;
+
+    emailjs
+      .send(
+        "service_v56lrwn", // Replace with your EmailJS service ID
+        "template_rzwscxo", // Replace with your EmailJS template ID
+        {
+          student_name: formData.studentName,
+          gender: formData.gender,
+          location: formData.location,
+          school_board: formData.schoolBoard,
+          phone_number: formData.phoneNumber,
+          email: formData.email,
+          date: formData.date,
+          pincode: formData.pincode,
+        },
+        "QieT3NiLbMq9hmH42" // Replace with your EmailJS public key
+      )
+      .then(() => {
+        toast.success("Form submitted successfully!");
+        setFormData({
+          studentName: "",
+          gender: "",
+          phoneNumber: "",
+          schoolBoard: "",
+          location: "",
+          email: "",
+          pincode: "",
+          date: "",
+        });
+      })
+      .catch((error) => {
+        toast.error("Failed to submit form. Please try again.");
+        console.error("EmailJS Error:", error);
+      });
   };
+
   return (
     <main className="bg-[#0F509C]">
+      <ToastContainer position="bottom-center" autoClose={3000} />
       <div className="mt-10 w-full pt-0 p-[85px] max-md:px-[20px] pb-0 max-md:mt-10 max-md:max-w-full relative">
         <Image
           src={BannerImg}
@@ -74,146 +115,113 @@ const StudentDetails = () => {
           onSubmit={handleSubmit}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-7 md:px-8">
-            {/* NAME */}
-            <div>
-              <label className="block text-sm font-medium text-white pb-2">
-                Student Name <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                name="studentName"
-                placeholder="Enter Full Name"
-                required
-                className="border p-3 rounded-md w-full"
-                value={formData.studentName}
-                onChange={handleChange}
-              />
-            </div>
-            {/* GENDER */}
-            <div>
-              <label className="block text-sm font-medium text-white pb-2">
-                Gender <span className="text-red-500">*</span>
-              </label>
-              <select
-                name="gender"
-                className="border p-3 rounded-md w-full"
-                value={formData.gender}
-                onChange={handleChange}
-                required
-              >
-                <option value="">Select Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            {/* PHONE NUMBER */}
-            <div>
-              <label className="block text-sm font-medium text-white pb-2">
-                Phone Number <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="tel"
-                name="phoneNumber"
-                placeholder="Enter Phone Number"
-                pattern="[0-9]{10}"
-                className="border p-3 rounded-md w-full"
-                required
-                value={formData.phoneNumber}
-                onChange={handleChange}
-              />
-            </div>
-            {/* School Board */}
-            <div>
-              <label className="block text-sm font-medium text-white pb-2">
-                School Board <span className="text-red-500">*</span>
-              </label>
-              <select
-                name="schoolBoard"
-                className="border p-3 rounded-md w-full"
-                value={formData.schoolBoard}
-                onChange={handleChange}
-                required
-              >
-                <option value="">Select School Board</option>
-                <option value="CBSE">CBSE</option>
-                <option value="ICSE">ICSE</option>
-                <option value="State Board">State Board</option>
-                <option value="IB">CHSE</option>
-              </select>
-            </div>
-            {/* Location With City */}
-            <div>
-              <label className="block text-sm font-medium text-white pb-2">
-                Current Location <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                name="location"
-                placeholder="Enter Location with City"
-                required
-                className="border p-3 rounded-md w-full"
-                value={formData.location}
-                onChange={handleChange}
-              />
-            </div>
-            {/* EMAIL */}
-            <div>
-              <label className="block text-sm font-medium text-white pb-2">
-                Email Address <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter email"
-                className="border p-3 rounded-md w-full"
-                required
-                value={formData.email}
-                onChange={handleChange}
-              />
-            </div>
-            {/* Pincode */}
-            <div>
-              <label className="block text-sm font-medium text-white pb-2">
-                Pincode <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                name="pincode"
-                placeholder="Enter pincode"
-                className="border p-3 rounded-md w-full"
-                value={formData.pincode}
-                onChange={handlePincodeInput}
-                maxLength={6}
-                pattern="\d{6}"
-                required
-              />
-            </div>
-            {/* DAte */}
-            <div>
-              <label className="block text-sm font-medium text-white pb-2">
-                Select Date <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="date"
-                name="date"
-                className="border p-3 rounded-md w-full"
-                value={formData.date}
-                onChange={handleChange}
-                required
-                min={today}
-              />
-            </div>
+            {/* Input Fields */}
+            {[
+              {
+                name: "studentName",
+                label: "Student Name",
+                type: "text",
+                required: true,
+              },
+              {
+                name: "gender",
+                label: "Gender",
+                type: "select",
+                options: ["Male", "Female", "Other"],
+                required: true,
+              },
+              {
+                name: "phoneNumber",
+                label: "Phone Number",
+                type: "tel",
+                required: true,
+                pattern: "[0-9]{10}",
+              },
+              {
+                name: "schoolBoard",
+                label: "School Board",
+                type: "select",
+                options: ["CBSE", "ICSE", "State Board", "CHSE"],
+                required: true,
+              },
+              {
+                name: "location",
+                label: "Current Location",
+                type: "text",
+                required: true,
+              },
+              {
+                name: "email",
+                label: "Email Address",
+                type: "email",
+                required: false,
+              },
+              {
+                name: "pincode",
+                label: "Pincode",
+                type: "text",
+                required: false,
+              },
+              {
+                name: "date",
+                label: "Select Date",
+                type: "date",
+                required: true,
+                min: today,
+              },
+            ].map((field) => (
+              <div key={field.name}>
+                <label className="block text-sm font-medium text-white pb-2">
+                  {field.label}
+                  {field.required && (
+                    <span className="text-red-500 ml-1">*</span>
+                  )}
+                </label>
+                {field.type === "select" ? (
+                  <select
+                    name={field.name}
+                    required={field.required}
+                    value={formData[field.name as keyof FormData] as string}
+                    onChange={handleChange}
+                    className="border p-3 rounded-md w-full"
+                  >
+                    <option value="">Select {field.label}</option>
+                    {field.options?.map((opt) => (
+                      <option key={opt} value={opt.toLowerCase()}>
+                        {opt}
+                      </option>
+                    ))}
+                  </select>
+                ) : (
+                  <input
+                    type={field.type}
+                    name={field.name}
+                    value={formData[field.name as keyof FormData] as string}
+                    onChange={
+                      field.name === "pincode"
+                        ? handlePincodeInput
+                        : handleChange
+                    }
+                    placeholder={`Enter ${field.label}`}
+                    className="border p-3 rounded-md w-full"
+                    required={field.required}
+                    pattern={field.pattern}
+                    min={field.min}
+                    maxLength={field.name === "pincode" ? 6 : undefined}
+                  />
+                )}
+              </div>
+            ))}
           </div>
+
           <div className="flex justify-center mt-6">
             <button
               type="submit"
-              className={`py-3 px-6 rounded-md text-white flex justify-center items-center gap-4  ${
+              className={`py-3 px-6 rounded-md text-white flex justify-center items-center gap-4 ${
                 isFormValid
                   ? "bg-[#0C67D1] hover:bg-white border-2 border-white hover:text-[#0C67D1] hover:font-semibold"
                   : "bg-gray-400 cursor-not-allowed"
               } transition duration-300`}
-              // className="bg-[#0C67D1] hover:bg-white border-white hover:text-[#0C67D1] border"
               disabled={!isFormValid}
             >
               <Image alt="img" src={ButtonImg} height={25} width={25} />
