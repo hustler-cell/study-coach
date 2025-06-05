@@ -50,7 +50,7 @@ const Navigation: React.FC = () => {
 
   return (
     <div className="flex overflow-hidden flex-col items-center bg-white">
-      <nav className="flex flex-wrap gap-5 fixed h-[80px] z-[999999] lg:mt-[-10px] justify-between self-stretch px-16 py-6 w-full text-xl font-medium text-white bg-sky-950 max-md:px-5 max-md:max-w-full">
+      <nav className="flex flex-wrap gap-5 fixed h-[80px] z-[999999] lg:mt-[-10px] justify-between self-stretch px-16 py-6 w-full text-xl font-medium text-white bg-sky-950 max-md:pr-5 max-md:pl-px max-md:max-w-full">
         <Link href="/">
           <img
             loading="lazy"

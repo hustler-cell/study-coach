@@ -6,7 +6,7 @@ import ValuesBanner from "./valuesBanner";
 
 export default function About() {
   return (
-    <main className="container mx-auto mt-8">
+    <main className="container mx-auto ">
       <AboutBanner />
       <JourneyBanner />
       <OfferBanner />
