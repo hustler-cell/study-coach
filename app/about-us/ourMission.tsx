@@ -2,7 +2,7 @@ import React from "react";
 
 const OurMission = () => {
   return (
-    <div className="w-full px-[100px] pt-5 max-md:px-5 relative mx-auto bg-white  flex flex-col justify-center items-center gap-10 md:py-20">
+    <div className="w-full px-[100px] pt-5 pb-5 max-md:px-5 relative mx-auto bg-white  flex flex-col justify-center items-center gap-10 md:py-20">
       <p className="font-bold text-black text-5xl text-center max-[500px]:text-4xl max-[350px]:text-3xl">
         Join Our Mission
       </p>

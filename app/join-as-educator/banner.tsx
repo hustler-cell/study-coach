@@ -15,7 +15,7 @@ export const Banner: React.FC<JoinAsEducatorBannerProps> = ({
     <div className="mt-10 w-full pt-0 pl-[85px] max-md:px-[20px] pb-0 max-md:mt-10 max-md:max-w-full relative">
       <div className="flex gap-5 max-md:flex-col">
         {/* Left Side Section */}
-        <div className="flex mt-20 flex-col w-[55%] max-md:w-full">
+        <div className="flex mt-20 max-md:mt-10 flex-col w-[55%] max-md:w-full">
           <div className="flex z-10 flex-col items-start w-full max-md:mt-10">
             <div className="text-[#687690]">{tagline}</div>
             <h1 className="text-4xl font-bold tracking-wide leading-[50px] text-indigo-950 max-md:text-3xl">

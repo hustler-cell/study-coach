@@ -80,7 +80,7 @@ export const DemoFaqContent: React.FC = () => {
   };
 
   return (
-    <main className="mt-5 w-full max-md:mt-10 max-md:max-w-full relative mx-auto mb-12">
+    <main className="mt-5 w-full max-md:mt-10 max-md:max-w-full relative mx-auto pb-12">
       <h1 className="text-4xl font-bold tracking-wide leading-[50px] text-[#2D1D61] max-md:text-2xl text-center">
         Frequently Asked Questions
       </h1>

@@ -15,6 +15,9 @@ interface FormData {
   email: string;
   date: string;
   pincode: string;
+  class: string;
+  subject: string;
+  schoolName: string;
 }
 
 const StudentDetails = () => {
@@ -29,10 +32,16 @@ const StudentDetails = () => {
     email: "",
     pincode: "",
     date: "",
+    class: "",
+    subject: "",
+    schoolName: "",
   });
 
   const [isFormValid, setIsFormValid] = useState(false);
-  const today = new Date().toISOString().split("T")[0];
+
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const minDate = tomorrow.toISOString().split("T")[0];
 
   useEffect(() => {
     const requiredFieldsFilled =
@@ -73,10 +82,13 @@ const StudentDetails = () => {
           gender: formData.gender,
           location: formData.location,
           school_board: formData.schoolBoard,
+          school_name: formData.schoolName,
           phone_number: formData.phoneNumber,
           email: formData.email,
           date: formData.date,
           pincode: formData.pincode,
+          class: formData.class,
+          subject: formData.subject,
         },
         "QieT3NiLbMq9hmH42" // Replace with your EmailJS public key
       )
@@ -91,6 +103,9 @@ const StudentDetails = () => {
           email: "",
           pincode: "",
           date: "",
+          class: "",
+          subject: "",
+          schoolName: "",
         });
       })
       .catch((error) => {
@@ -131,13 +146,6 @@ const StudentDetails = () => {
                 required: true,
               },
               {
-                name: "phoneNumber",
-                label: "Phone Number",
-                type: "tel",
-                required: true,
-                pattern: "[0-9]{10}",
-              },
-              {
                 name: "schoolBoard",
                 label: "School Board",
                 type: "select",
@@ -145,10 +153,58 @@ const StudentDetails = () => {
                 required: true,
               },
               {
+                name: "schoolName",
+                label: "School Name",
+                type: "text",
+                required: true,
+              },
+              {
+                name: "class",
+                label: "Class",
+                type: "select",
+                options: [
+                  "1st",
+                  "2nd",
+                  "3rd",
+                  "4th",
+                  "5th",
+                  "6th",
+                  "7th",
+                  "8th",
+                  "9th",
+                  "10th",
+                  "11th",
+                  "12th",
+                ],
+                required: true,
+              },
+              {
+                name: "subject",
+                label: "Subject",
+                type: "select",
+                options: [
+                  "All",
+                  "Mathematics",
+                  "Science",
+                  "Social Studies",
+                  "English",
+                  "Biology",
+                  "Coding",
+                ],
+                required: true,
+              },
+              {
                 name: "location",
                 label: "Current Location",
                 type: "text",
                 required: true,
+              },
+              {
+                name: "phoneNumber",
+                label: "Phone Number",
+                type: "tel",
+                required: true,
+                pattern: "[0-9]{10}",
               },
               {
                 name: "email",
@@ -167,7 +223,7 @@ const StudentDetails = () => {
                 label: "Select Date",
                 type: "date",
                 required: true,
-                min: today,
+                min: minDate,
               },
             ].map((field) => (
               <div key={field.name}>
@@ -183,7 +239,7 @@ const StudentDetails = () => {
                     required={field.required}
                     value={formData[field.name as keyof FormData] as string}
                     onChange={handleChange}
-                    className="border p-3 rounded-md w-full"
+                    className="border p-3 rounded-md w-full text-black"
                   >
                     <option value="">Select {field.label}</option>
                     {field.options?.map((opt) => (
@@ -203,7 +259,7 @@ const StudentDetails = () => {
                         : handleChange
                     }
                     placeholder={`Enter ${field.label}`}
-                    className="border p-3 rounded-md w-full"
+                    className="border p-3 rounded-md w-full text-black"
                     required={field.required}
                     pattern={field.pattern}
                     min={field.min}
