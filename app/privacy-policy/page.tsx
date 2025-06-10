@@ -168,8 +168,11 @@ const PrivacyPolicy = () => {
         can reach us at:
         <br />
         📧{" "}
-        <a href="mailto:info@studit.in" className="text-blue-600 underline">
-          studycoach.co.in
+        <a
+          href="mailto:info@studycoach.co.in"
+          className="text-blue-600 underline"
+        >
+          info@studycoach.co.in
         </a>
       </p>
 
