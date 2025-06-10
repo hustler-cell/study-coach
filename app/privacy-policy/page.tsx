@@ -2,8 +2,8 @@ import React from "react";
 
 const PrivacyPolicy = () => {
   return (
-    <div className="p-4 md:p-10 max-w-5xl mx-auto text-justify text-sm md:text-base leading-relaxed bg-white">
-      <h1 className="text-2xl font-bold mb-6 text-center mt-16">
+    <div className="p-4 md:p-10 max-w-5xl mx-auto text-justify text-sm md:text-base leading-relaxed bg-white text-gray-800">
+      <h1 className="text-2xl font-bold mb-6 text-center mt-20">
         Privacy Policy
       </h1>
 
@@ -169,7 +169,7 @@ const PrivacyPolicy = () => {
         <br />
         📧{" "}
         <a href="mailto:info@studit.in" className="text-blue-600 underline">
-          info@studit.in
+          studycoach.co.in
         </a>
       </p>
 
