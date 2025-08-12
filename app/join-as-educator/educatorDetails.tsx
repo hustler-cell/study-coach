@@ -79,6 +79,10 @@ const EducatorDetails = () => {
   };
 
   const validateForm = () => {
+    if (formData.mobile.length !== 10) {
+      toast.error("Mobile Number must be exactly 10 digits.");
+      return false;
+    }
     const requiredFields = [
       "name",
       "email",
@@ -99,15 +103,15 @@ const EducatorDetails = () => {
   };
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-    console.log("email called");
+    // console.log("email called");
 
     e.preventDefault();
 
     if (!validateForm()) return;
     emailjs
       .send(
-        "service_e66wt85", // Replace with your EmailJS service ID
-        "template_m0zh5u7", // Replace with your EmailJS template ID
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID_EDUCATOR!, // Replace with your EmailJS service ID
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_EDUCATOR!, // Replace with your EmailJS template ID
         {
           user_name: formData.name,
           user_email: formData.email,
@@ -118,7 +122,7 @@ const EducatorDetails = () => {
           user_message: formData.message,
           user_referral: formData.referral || "",
         },
-        "6p39jM7RWEypSj3Dj" // Replace with your EmailJS public key
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY_EDUCATOR! // Replace with your EmailJS public key
       )
       .then(
         () => {
@@ -196,7 +200,9 @@ const EducatorDetails = () => {
               name: "mobile",
               id: "mobile",
               label: "Mobile Number",
-              type: "number",
+              type: "tel",
+              maxLength: 10,
+              pattern: "[0-9]{10}",
             },
             {
               name: "address",
@@ -226,6 +232,8 @@ const EducatorDetails = () => {
                 value={formData[name as keyof FormDataType]}
                 onChange={handleChange}
                 placeholder=" "
+                maxLength={name === "mobile" ? 10 : undefined}
+                pattern={name === "mobile" ? "[0-9]{10}" : undefined}
                 className="peer w-full border-2 border-gray-300 rounded-md px-3 pt-4 pb-2 text-sm text-gray-900 placeholder-transparent focus:outline-none focus:border-black"
               />
               <label

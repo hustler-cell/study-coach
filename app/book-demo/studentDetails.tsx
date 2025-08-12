@@ -75,8 +75,8 @@ const StudentDetails = () => {
 
     emailjs
       .send(
-        "service_v56lrwn", // Replace with your EmailJS service ID
-        "template_rzwscxo", // Replace with your EmailJS template ID
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!, // Replace with your EmailJS service ID
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, // Replace with your EmailJS template ID
         {
           student_name: formData.studentName,
           gender: formData.gender,
@@ -90,7 +90,7 @@ const StudentDetails = () => {
           class: formData.class,
           subject: formData.subject,
         },
-        "QieT3NiLbMq9hmH42" // Replace with your EmailJS public key
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! // Replace with your EmailJS public key
       )
       .then(() => {
         toast.success("Form submitted successfully!");
