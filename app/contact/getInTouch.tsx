@@ -15,10 +15,10 @@ const GetInTouch = () => {
 
     emailjs
       .sendForm(
-        "service_e66wt85",
-        "template_1nsaesu",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID_EDUCATOR!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_GET_IN_TOUCH!,
         formRef.current!,
-        "6p39jM7RWEypSj3Dj"
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY_EDUCATOR!
       )
       .then(() => {
         toast.success("Message sent successfully!", {
