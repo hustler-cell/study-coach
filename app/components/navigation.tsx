@@ -1,8 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import HamburgerIcon from "../components/hamburgerIcon";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 interface NavItemProps {
   label: string;
@@ -42,7 +42,21 @@ const navItems = [
 
 const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const pathname = usePathname();
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    setIsLoggedIn(!!token);
+  }, [pathname]);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+    router.replace("/");
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -59,6 +73,7 @@ const Navigation: React.FC = () => {
             className="object-contain shrink-0 max-w-full  mt-[-4px] aspect-[4.46] w-[200px]"
           />
         </Link>
+        {/* Desktop */}
         <div className="hidden lg:flex flex-wrap gap-10 items-start text-[16px] self-end">
           {navItems.map((item, index) => {
             const isHome = item.href === "/";
@@ -67,7 +82,24 @@ const Navigation: React.FC = () => {
               : pathname.startsWith(item.href);
             return <NavItem key={index} {...item} isActive={isActive} />;
           })}
+
+          {!isLoggedIn ? (
+            <Link
+              href="/login"
+              className="ml-4 bg-white text-sky-950 px-4 py-1 rounded-lg font-semibold"
+            >
+              Login
+            </Link>
+          ) : (
+            <button
+              onClick={handleLogout}
+              className="ml-4 bg-white text-sky-950 px-4 py-1 rounded-lg font-semibold"
+            >
+              Logout
+            </button>
+          )}
         </div>
+
         <HamburgerIcon isOpen={isMenuOpen} onClick={toggleMenu} />
       </nav>
 
@@ -91,6 +123,26 @@ const Navigation: React.FC = () => {
               />
             );
           })}
+
+          {!isLoggedIn ? (
+            <Link
+              href="/login"
+              onClick={() => setIsMenuOpen(false)}
+              className="mt-4 bg-sky-950 text-white px-6 py-2 rounded-lg font-semibold"
+            >
+              Login
+            </Link>
+          ) : (
+            <button
+              onClick={() => {
+                setIsMenuOpen(false);
+                handleLogout();
+              }}
+              className="mt-4 bg-sky-950 text-white px-6 py-2 rounded-lg font-semibold"
+            >
+              Logout
+            </button>
+          )}
         </div>
       </div>
     </div>
